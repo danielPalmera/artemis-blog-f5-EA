@@ -1,0 +1,11 @@
+{
+  "name": "artemis-blog-frontend",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "serve . -l 4321"
+  },
+  "devDependencies": {
+    "serve": "14.2.4"
+  }
+}

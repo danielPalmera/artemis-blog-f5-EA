@@ -1,0 +1,92 @@
+[
+  {
+    "publishedAt": "2026-04-10",
+    "title": "Splashdown! Artemis II Crew Returns Safely to Earth",
+    "slug": "artemis-ii-splashdown-crew-returns-earth",
+    "excerpt": "After nearly 10 days and 694,481 miles around the Moon and back, the Orion spacecraft splashed down safely off the coast of San Diego on April 10, 2026.",
+    "coverImage": {
+      "src": "http://localhost:3000/images/art002e008487~large.jpg",
+      "alt": "Orion spacecraft with crew during recovery after splashdown"
+    },
+    "author": "NASA Recovery Team",
+    "tags": "artemis II, splashdown, reentry, recovery, orion, Pacific Ocean, San Diego",
+    "content": "<h2>Welcome Home: Artemis II Closes a Historic Chapter</h2><p>On April 10, 2026, the Orion spacecraft splashed down in the Pacific Ocean off the coast of San Diego, closing a nearly 10-day mission that covered 694,481 miles around the Moon and back.</p><h3>Reentry at 35 Times the Speed of Sound</h3><p>The crew and spacecraft were protected by Orion's thermal protection system during reentry at nearly 35 times the speed of sound. Airborne cameras captured imagery that engineers will study for heat shield performance analysis.</p><h3>Recovery Operations</h3><p>Navy divers retrieved each crew member from the spacecraft and brought them aboard USS John P. Murtha. The Orion capsule was subsequently recovered and returned to Naval Base San Diego.</p><h3>Heat Shield Performance</h3><p>Post-splashdown inspections found the char loss behavior observed after Artemis I was significantly reduced — validating the design improvements made after the earlier mission.</p>",
+    "readingTime": 4,
+    "id": "6"
+  },
+  {
+    "publishedAt": "2026-04-07",
+    "title": "Orion's Lunar Flyby: Seeing the Far Side of the Moon Like Never Before",
+    "slug": "orion-lunar-flyby-far-side-moon",
+    "excerpt": "During the Artemis II lunar flyby, the crew captured unprecedented imagery of the Moon's far side, areas that human eyes had rarely seen directly.",
+    "coverImage": {
+      "src": "http://localhost:3000/images/art002e009287~large.jpg",
+      "alt": "Orion spacecraft approaching the Moon during Artemis II flyby"
+    },
+    "author": "NASA Science Team",
+    "tags": "artemis II, lunar flyby, moon far side, orion, photography, deep space exploration",
+    "content": "<h2>A Unique Vantage Point: The Far Side of the Moon</h2><p>During the Artemis II lunar flyby, the crew of Orion had a view of the Moon that no human had experienced since the Apollo era — and in some respects, never before.</p><h3>A Fleet of Cameras</h3><p>The crew used a variety of digital handheld cameras to conduct high-resolution photography of the lunar surface, capturing features with varying illumination and texture from a vantage point impossible to replicate from Earth.</p><h3>Science Operations from Orion</h3><p>Artemis II science operations were designed to lay the foundation for safe and efficient future human exploration of the Moon and Mars, with the crew working alongside scientists on Earth during the flyby.</p><h3>40 Minutes of Silence</h3><p>As Orion passed behind the Moon, all communication with Mission Control was lost for approximately 40 minutes — a planned blackout caused by the Moon blocking Deep Space Network signals.</p>",
+    "readingTime": 5,
+    "id": "5"
+  },
+  {
+    "publishedAt": "2026-04-06",
+    "title": "Artemis II Crew Breaks the All-Time Human Spaceflight Distance Record",
+    "slug": "artemis-ii-crew-breaks-human-spaceflight-distance-record",
+    "excerpt": "Six days into their mission, the four Artemis II astronauts surpassed 248,655 miles from Earth, eclipsing the record set by Apollo 13 in 1970.",
+    "coverImage": {
+      "src": "http://localhost:3000/images/art002e016198~large.jpg",
+      "alt": "Artemis II crew in Orion during lunar flyby"
+    },
+    "author": "NASA Public Affairs",
+    "tags": "artemis II, record, farthest humans, deep space, Apollo 13, lunar flyby",
+    "content": "<h2>Farther Than Any Human Has Ever Been</h2><p>On April 6, 2026, the crew of Orion made history at 12:56 p.m. CDT, traveling 248,655 miles from Earth — surpassing the record previously set by Apollo 13 in 1970.</p><h3>Words from the Moon</h3><p>CSA astronaut Jeremy Hansen addressed the world from Orion, honoring their predecessors while challenging the next generation to push human exploration even further.</p><h3>Closest Approach to the Lunar Surface</h3><p>During the flyby, Orion passed approximately 4,067 miles from the Moon's surface. A communications blackout of about 40 minutes occurred as the Moon blocked Deep Space Network signals.</p><h3>Naming New Craters</h3><p>The crew proposed names for two previously unnamed lunar craters: one named <em>Integrity</em> after their spacecraft, and one honoring Wiseman's late wife, Carroll. Both will be submitted to the International Astronomical Union.</p>",
+    "readingTime": 6,
+    "id": "4"
+  },
+  {
+    "publishedAt": "2026-04-02",
+    "title": "Translunar Injection: Artemis II Crew Leaves Earth's Orbit",
+    "slug": "artemis-ii-translunar-injection-leaves-earth-orbit",
+    "excerpt": "For the first time since Apollo 17, human beings broke free of Earth's orbit as Orion's engine fired to send the Artemis II crew on their path to the Moon.",
+    "coverImage": {
+      "src": "http://localhost:3000/images/art002e000191~large.jpg",
+      "alt": "Earth crescent seen from Orion during Artemis II"
+    },
+    "author": "NASA Johnson Space Center",
+    "tags": "artemis II, translunar injection, earth orbit, orion, moon trajectory, deep space",
+    "content": "<h2>Breaking Free: The Translunar Injection Burn</h2><p>On the second day of the Artemis II mission, Orion's service module engine fired for approximately six minutes in the translunar injection burn, breaking the spacecraft free of Earth's orbit.</p><h3>A Milestone 50 Years in the Making</h3><p>Mission controllers at Johnson Space Center confirmed the burn was nominal. For the first time since Apollo 17, humans had departed Earth orbit.</p><h3>High Earth Orbit Checkouts</h3><p>Before the TLI burn, Orion spent about 24 hours in a high Earth orbit at approximately 46,000 miles above the surface, during which the crew conducted thorough systems checks.</p><h3>What Comes Next</h3><p>Following the TLI burn, the crew began the multi-day outbound journey toward the Moon, conducting scientific observations and life support tests en route to the lunar flyby.</p>",
+    "readingTime": 4,
+    "id": "3"
+  },
+  {
+    "publishedAt": "2026-04-01",
+    "title": "Artemis II Launch Day: Humanity Returns to Deep Space",
+    "slug": "artemis-ii-launch-day-humanity-returns-deep-space",
+    "excerpt": "NASA's SLS rocket lifted off from Kennedy Space Center on April 1, 2026, carrying four astronauts on the first crewed lunar mission in more than 50 years.",
+    "coverImage": {
+      "src": "http://localhost:3000/images/art002e012278~large.jpg",
+      "alt": "Artemis II launch from Kennedy Space Center"
+    },
+    "author": "NASA Launch Team",
+    "tags": "artemis II, launch, SLS, Kennedy Space Center, liftoff, orion",
+    "content": "<h2>April 1, 2026: A Historic Day for Human Spaceflight</h2><p>At 6:35 p.m. EDT on April 1, 2026, NASA's SLS rocket lifted off from Launch Complex 39B at Kennedy Space Center, carrying the Orion spacecraft and four astronauts into history.</p><h3>Countdown and Crew Departure</h3><p>The crew donned their suits and helmets, completing integrity checks before boarding Orion. The ground launch sequencer orchestrated hundreds of commands during terminal count.</p><h3>Ascent to Orbit</h3><p>After clearing the launch tower, SLS performed its roll and pitch maneuver. The crew named their Orion spacecraft <em>Integrity</em>.</p><h3>Solar Array Deployment</h3><p>Orion deployed all four solar array wings, giving the spacecraft its full 63-foot wingspan and beginning to draw power from the Sun.</p><h3>Proximity Operations Demonstration</h3><p>The crew performed a manual piloting demonstration, maneuvering Orion relative to the ICPS as a docking target — a key test for future missions requiring orbital rendezvous near the Moon.</p>",
+    "readingTime": 5,
+    "id": "2"
+  },
+  {
+    "publishedAt": "2026-03-13",
+    "title": "NASA's Artemis II Moon Mission Daily Agenda",
+    "slug": "artemis-ii-moon-mission-daily-agenda",
+    "excerpt": "A detailed breakdown of the 10-day schedule for the Artemis II crewed mission around the Moon aboard the Orion spacecraft named Integrity.",
+    "coverImage": {
+      "src": "http://localhost:3000/images/art002e009301~large.jpg",
+      "alt": "Artemis II mission suit patch"
+    },
+    "author": "NASA Editorial Team",
+    "tags": "artemis II, moon, orion, crewed mission, daily agenda, SLS",
+    "content": "<h2>Artemis II: The First Crewed Flight Around the Moon in 50 Years</h2><p>Artemis II is NASA's first crewed lunar mission since Apollo 17 in 1972. The four-person crew aboard Orion — named <em>Integrity</em> by the astronauts — embarked on a 10-day journey around the Moon and back to Earth.</p><h3>The Crew</h3><p>The mission crew consists of NASA astronauts Commander Reid Wiseman, Pilot Victor Glover, and Mission Specialist Christina Koch, along with CSA Mission Specialist Jeremy Hansen.</p><h3>Day 1 – Launch Day, April 1, 2026</h3><p>The SLS rocket lifted off from Launch Complex 39B at Kennedy Space Center at 6:35 p.m. EDT. Within minutes, Orion deployed its four solar array wings, giving the spacecraft a wingspan of roughly 63 feet.</p><h3>Day 2 – Translunar Injection</h3><p>A six-minute firing of Orion's service module engine broke the spacecraft free of Earth's orbit and set it on a precise trajectory toward the Moon.</p><h3>Day 7 – Lunar Flyby</h3><p>Orion performed a close lunar flyby, passing approximately 4,067 miles from the Moon's surface. The crew captured high-resolution photographs of the lunar surface.</p><h3>Return to Earth</h3><p>Orion splashed down off the coast of San Diego on April 10, 2026.</p>",
+    "readingTime": 11,
+    "id": "1"
+  }
+]
