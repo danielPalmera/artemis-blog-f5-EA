@@ -1,0 +1,131 @@
+---
+export async function getStaticPaths() {
+	const res = await fetch("http://localhost:3000/api/v1/posts");
+	const posts = await res.json();
+	return posts.map((post: any) => ({
+	params: { slug: post.slug },
+	props: { post },
+	}));
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { post } = Astro.props;
+
+function localImg(src: string) {
+	return src.replace(/^https?:\/\/[^/]+\/images\//, `${base}/images/`);
+}
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{post.title} · The Artemis Diary</title>
+
+		<!-- SEO -->
+		<meta name="description" content={post.excerpt} />
+		<meta name="author" content={post.author} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content={post.title} />
+		<meta property="og:description" content={post.excerpt} />
+		<meta property="og:image" content={post.coverImage.src} />
+		<meta property="og:image:alt" content={post.coverImage.alt} />
+		<meta property="og:url" content={Astro.url.href} />
+		<meta property="og:site_name" content="The Artemis Diary" />
+		<meta property="article:published_time" content={post.publishedAt} />
+		<meta property="article:author" content={post.author} />
+		<meta property="article:tag" content={post.tags} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={post.title} />
+		<meta name="twitter:description" content={post.excerpt} />
+		<meta name="twitter:image" content={post.coverImage.src} />
+		<style>
+			* { box-sizing: border-box; margin: 0; padding: 0; }
+			body { font-family: sans-serif; background: #0a0a0f; color: #eee; }
+
+			.hero {
+				width: 100%;
+				max-height: 480px;
+				overflow: hidden;
+			}
+			.hero img { width: 100%; height: 480px; object-fit: cover; }
+
+			.container {
+				max-width: 760px;
+				margin: 0 auto;
+				padding: 2rem 1.5rem 4rem;
+			}
+
+			.back {
+				display: inline-block;
+				margin-bottom: 1.5rem;
+				color: #888;
+				text-decoration: none;
+				font-size: 0.9rem;
+			}
+			.back:hover { color: #eee; }
+
+			h1 { font-size: 2rem; line-height: 1.3; margin-bottom: 1rem; }
+
+			.meta {
+				display: flex;
+				gap: 1rem;
+				font-size: 0.8rem;
+				color: #888;
+				margin-bottom: 0.75rem;
+				flex-wrap: wrap;
+			}
+
+			.tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.4rem;
+				margin-bottom: 2rem;
+			}
+			.tag {
+				background: #1e1e2e;
+				border: 1px solid #333;
+				border-radius: 999px;
+				padding: 0.2rem 0.7rem;
+				font-size: 0.72rem;
+				color: #aaa;
+			}
+
+			.content { line-height: 1.8; font-size: 1rem; }
+			.content h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; }
+			.content h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: #ccc; }
+			.content p { margin-bottom: 1rem; color: #ccc; }
+		</style>
+	</head>
+	<body>
+		<div class="hero">
+			<img src={localImg(post.coverImage.src)} alt={post.coverImage.alt} />
+		</div>
+
+		<div class="container">
+			<a class="back" href={`${base}/`}>← Volver</a>
+
+			<h1>{post.title}</h1>
+
+			<div class="meta">
+				<span>{post.publishedAt}</span>
+				<span>{post.author}</span>
+				<span>{post.readingTime} min de lectura</span>
+			</div>
+
+			<div class="tags">
+				{post.tags.split(",").map((tag: string) => (
+					<span class="tag">{tag.trim()}</span>
+				))}
+			</div>
+
+			<div class="content" set:html={post.content} />
+		</div>
+	</body>
+</html>

@@ -1,11 +1,17 @@
 {
-  "name": "artemis-blog-frontend",
-  "private": true,
+  "name": "tremendous-telescope",
+  "type": "module",
   "version": "0.0.1",
-  "scripts": {
-    "dev": "serve . -l 4321"
+  "engines": {
+    "node": ">=22.12.0"
   },
-  "devDependencies": {
-    "serve": "14.2.4"
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^6.4.0"
   }
 }
