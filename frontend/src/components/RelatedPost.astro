@@ -17,32 +17,30 @@ const {
 ---
 
 <article class="card">
-	
+	<a href={`${base}/posts/${post.slug}`}></a>
 		<figure>
 			<img
 				src={localImg(post.coverImage.src)}
 				alt={post.coverImage.alt}
 			/>
 		</figure>
-
 		<div class="card-body">
 			<time datetime={post.publishedAt}>
 				{new Date(post.publishedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
 			</time>
 			<h2 class:list={[
-				"card-title",
-				isFeatured && "featured-title"
+				"card-title"
 			]}>
 				{post.title}
 			</h2>
-			<p>{post.excerpt}</p>
-			<a href={`${base}/posts/${post.slug}`}>Read story →</a>
+			
 		</div>
+	</a>
 </article>
 
 <style>
 	.card {
-		var(--color-background);
+		background: #16161f;
 		border-radius: 10px;
 		overflow: hidden;
 		transition: transform 0.2s, box-shadow 0.2s;
@@ -88,7 +86,6 @@ const {
 		font-size: 1rem;
 		font-weight: 600;
 		line-height: 1.4;
-		color:var(--color-text);
 	}
 
 	.featured-title {
