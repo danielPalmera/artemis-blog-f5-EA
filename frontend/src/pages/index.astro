@@ -1,136 +1,139 @@
 ---
-import '../styles/global.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import PostCard from '../components/PostCard.astro';
-import Title from '../components/Title.astro';
-import type { Post } from '../types/post';
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import PostCard from "../components/PostCard.astro";
+import Title from "../components/Title.astro";
+import type { Post } from "../types/post";
 
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const res = await fetch("http://localhost:3000/api/v1/posts");
 
 const posts: Post[] = await res.json();
 
 function localImg(src: string) {
-	return src.replace(
-		/^https?:\/\/[^/]+\/images\//,
-		`${base}/images/`
-	);
+  return src.replace(/^https?:\/\/[^/]+\/images\//, `${base}/images/`);
 }
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
 
-		<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-		<link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" href="./favicon.ico" />
 
-		<meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width" />
 
-		<meta name="generator" content={Astro.generator} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-		<title>The Artemis Diary</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-		<!-- SEO -->
-		<meta
-			name="description"
-			content="Crónicas de la misión Artemis II: el regreso de la humanidad al espacio profundo."
-		/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-		<!-- Open Graph -->
-		<meta property="og:type" content="website" />
+    <title>The Artemis Diary</title>
 
-		<meta property="og:title" content="The Artemis Diary" />
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Crónicas de la misión Artemis II: el regreso de la humanidad al espacio profundo."
+    />
 
-		<meta
-			property="og:description"
-			content="Crónicas de la misión Artemis II: el regreso de la humanidad al espacio profundo."
-		/>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
 
-		<meta property="og:url" content={Astro.site} />
+    <meta property="og:title" content="The Artemis Diary" />
 
-		<meta property="og:site_name" content="The Artemis Diary" />
+    <meta
+      property="og:description"
+      content="Crónicas de la misión Artemis II: el regreso de la humanidad al espacio profundo."
+    />
 
-		<meta
-			property="og:image"
-			content={`${Astro.site}images/artemis-mission.jpg`}
-		/>
+    <meta property="og:url" content={Astro.site} />
 
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:site_name" content="The Artemis Diary" />
 
-		<meta name="twitter:title" content="The Artemis Diary" />
+    <meta
+      property="og:image"
+      content={`${Astro.site}images/artemis-mission.jpg`}
+    />
 
-		<meta
-			name="twitter:description"
-			content="Crónicas de la misión Artemis II: el regreso de la humanidad al espacio profundo."
-		/>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
 
-		<meta
-			name="twitter:image"
-			content={`${Astro.site}images/artemis-mission.jpg`}
-		/>
+    <meta name="twitter:title" content="The Artemis Diary" />
 
-		<style>
-			
+    <meta
+      name="twitter:description"
+      content="Crónicas de la misión Artemis II: el regreso de la humanidad al espacio profundo."
+    />
 
-			main {
-				width: 100%;
-			}
+    <meta
+      name="twitter:image"
+      content={`${Astro.site}images/artemis-mission.jpg`}
+    />
 
-			ul.grid {
-				list-style: none;
+    <style>
+      main {
+        width: 100%;
+      }
 
-				display: grid;
+      ul.grid {
+        list-style: none;
 
-				grid-template-columns: 1fr;
+        display: grid;
 
-				gap: 1.5rem;
-			}
+        grid-template-columns: 1fr;
 
-			@media (min-width: 768px) {
-				ul.grid {
-					grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
 
-					grid-auto-rows: 260px;
-				}
+      @media (min-width: 768px) {
+        ul.grid {
+          grid-template-columns: repeat(3, 1fr);
 
-				ul.grid > li:first-child {
-					grid-column: span 2;
+          grid-auto-rows: 260px;
+        }
 
-					grid-row: span 2;
-				}
-			}
+        ul.grid > li:first-child {
+          grid-column: span 2;
 
-			ul.grid > li {
-				min-height: 0;
-			}
-		</style>
-	</head>
+          grid-row: span 2;
+        }
+      }
 
-	<body>
-		<Header />
-	
-		<main>
-			<Title/>
-			<ul class="grid" role="list">
-				{
-					posts.map((post: Post, index: number) => (
-						<li>
-							<PostCard
-								post={post}
-								base={base}
-								localImg={localImg}
-								isFeatured={index === 0}
-							/>
-						</li>
-					))
-				}
-			</ul>
-		</main>
+      ul.grid > li {
+        min-height: 0;
+      }
+    </style>
+  </head>
 
-		<Footer />
-	</body>
+  <body>
+    <Header />
+
+    <main>
+      <Title />
+      <ul class="grid" role="list">
+        {
+          posts.map((post: Post, index: number) => (
+            <li>
+              <PostCard
+                post={post}
+                base={base}
+                localImg={localImg}
+                isFeatured={index === 0}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+
+    <Footer />
+  </body>
 </html>
