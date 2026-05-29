@@ -42,7 +42,7 @@ const {
 
 <style>
 	.card {
-		background: #16161f;
+		var(--color-background);
 		border-radius: 10px;
 		overflow: hidden;
 		transition: transform 0.2s, box-shadow 0.2s;
@@ -88,6 +88,7 @@ const {
 		font-size: 1rem;
 		font-weight: 600;
 		line-height: 1.4;
+		color:var(--color-text);
 	}
 
 	.featured-title {

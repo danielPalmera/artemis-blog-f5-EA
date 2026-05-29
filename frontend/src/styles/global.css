@@ -1,7 +1,7 @@
 :root {
   --font-family: sans-serif;
   --color-background: #0a0a0f;
-  --color-text: color: #eee;
+  --color-text: #eee;
   --var-padding: 2rem 2rem 4rem;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
