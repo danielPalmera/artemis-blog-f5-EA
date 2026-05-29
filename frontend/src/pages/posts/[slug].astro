@@ -113,9 +113,9 @@ function localImg(src: string) {
 				<div class="container">
 					<header>
 						<a class="back" href={`${base}/`}>← Back to stories</a>
-					<figure class="hero">
-						<img src={localImg(post.coverImage.src)} alt={post.coverImage.alt} />
-					</figure>
+						<figure class="hero">
+							<img src={localImg(post.coverImage.src)} alt={post.coverImage.alt} />
+						</figure>
 						<h1>{post.title}</h1>
 						<footer class="meta">
 							<time datetime={post.publishedAt}>{new Date(post.publishedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
