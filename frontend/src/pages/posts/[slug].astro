@@ -1,15 +1,18 @@
 ---
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import type { Post } from '../../types/post';
 export async function getStaticPaths() {
 	const res = await fetch("http://localhost:3000/api/v1/posts");
-	const posts = await res.json();
-	return posts.map((post: any) => ({
+	const posts: Post[] = await res.json();
+	return posts.map((post: Post) => ({
 	params: { slug: post.slug },
 	props: { post },
 	}));
 }
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const { post } = Astro.props;
+const { post }: { post: Post } = Astro.props;
 
 function localImg(src: string) {
 	return src.replace(/^https?:\/\/[^/]+\/images\//, `${base}/images/`);
@@ -104,12 +107,7 @@ function localImg(src: string) {
 		</style>
 	</head>
 	<body>
-		<header>
-			<nav aria-label="Navegación principal">
-				<a class="back" href={`${base}/`}>← Volver</a>
-			</nav>
-		</header>
-
+		<Header />
 		<main>
 			<article>
 				<figure class="hero">
@@ -137,5 +135,6 @@ function localImg(src: string) {
 				</div>
 			</article>
 		</main>
+		<Footer />
 	</body>
 </html>

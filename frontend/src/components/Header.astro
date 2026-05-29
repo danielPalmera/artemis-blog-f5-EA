@@ -1,0 +1,27 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<header class="site-header">
+    <a href={`${base}/`} aria-label="Ir al inicio">
+        <img src={`${base}/images/artemis-logo.png`} alt="The Artemis Diary" />
+    </a>
+</header>
+
+<style>
+    .site-header {
+        display: flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: #0a0a0f;
+        border-bottom: 1px solid #1e1e2e;
+    }
+    .site-header a {
+        display: inline-flex;
+        align-items: center;
+    }
+    .site-header img {
+        height: 40px;
+        width: auto;
+    }
+</style>
