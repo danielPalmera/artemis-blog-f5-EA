@@ -3,18 +3,33 @@
 
 
 :root {
-  --font-family: Inter, sans-serif;
+  --font-family: 'Inter', sans-serif;
   --color-background: #0a0a0f;
   --color-text: #eee;
-  --color-footer:#8B8B96;
-  --font-size-sm: 0.8rem;
-  --var-padding: 2rem 2rem 4rem;
+  --color-footer: #888;
+
+  /* DISPLAY */
+  --text-display-xl: 6rem;
+
+  /* HEADINGS */
+  --text-h1: 4rem;
+  --text-h2: 2.5rem;
+  --text-h3: 1.5rem;
+
+  /* BODY */
+  --text-body-lg: 1.25rem;
+  --text-body-md: 1rem;
+  --text-body-sm: 0.8rem;
+
+  /* SPACING */
   --space-xs: 0.25rem;
-  --space-sm: 0.8rem;
+  --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
   --space-xl: 2rem;
   --space-2xl: 4rem;
+
+  --var-padding: 6rem 6rem 4rem;
 }
 
 * {
