@@ -1,9 +1,9 @@
 ---
+import '../styles/global.css';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import PostCard from '../components/PostCard.astro';
 import Title from '../components/Title.astro';
-
 import type { Post } from '../types/post';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -74,18 +74,7 @@ function localImg(src: string) {
 		/>
 
 		<style>
-			* {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-			}
-
-			body {
-				font-family: sans-serif;
-				background: #0a0a0f;
-				color: #eee;
-				padding: 2rem 2rem 4rem;
-			}
+			
 
 			main {
 				width: 100%;
