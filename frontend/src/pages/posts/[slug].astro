@@ -110,25 +110,28 @@ function localImg(src: string) {
 		<Header />
 		<main>
 			<article>
-				<figure class="hero">
-					<img src={localImg(post.coverImage.src)} alt={post.coverImage.alt} />
-				</figure>
-
 				<div class="container">
 					<header>
+						<a class="back" href={`${base}/`}>← Back to stories</a>
+					<figure class="hero">
+						<img src={localImg(post.coverImage.src)} alt={post.coverImage.alt} />
+					</figure>
 						<h1>{post.title}</h1>
 						<footer class="meta">
-							<time datetime={post.publishedAt}>{post.publishedAt}</time>
+							<time datetime={post.publishedAt}>{new Date(post.publishedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+</time>
 							<span aria-hidden="true">·</span>
-							<address rel="author">{post.author}</address>
-							<span aria-hidden="true">·</span>
+							<!--<address rel="author">{post.author}</address>
+							<span aria-hidden="true">·</span> -->
 							<span>{post.readingTime} min de lectura</span>
 						</footer>
+						<!--
 						<ul class="tags" role="list" aria-label="Etiquetas">
 							{post.tags.split(",").map((tag: string) => (
 								<li class="tag">{tag.trim()}</li>
 							))}
 						</ul>
+						-->
 					</header>
 
 					<section class="content" set:html={post.content} aria-label="Contenido del artículo" />
