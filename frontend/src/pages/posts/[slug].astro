@@ -1,14 +1,14 @@
 ---
-import Footer from '../../components/Footer.astro';
-import Header from '../../components/Header.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import type { Post } from '../../types/post';
+
 export async function getStaticPaths() {
 	const res = await fetch("http://localhost:3000/api/v1/posts");
 	const posts: Post[] = await res.json();
 	return posts.map((post: Post) => ({
-	params: { slug: post.slug },
-	props: { post, allPosts: posts },
+		params: { slug: post.slug },
+		props: { post, allPosts: posts },
 	}));
 }
 
@@ -25,39 +25,20 @@ function localImg(src: string) {
 }
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{post.title} · The Artemis Diary</title>
+<BaseLayout
+	title={`${post.title} · The Artemis Diary`}
+	description={post.excerpt}
+	ogType="article"
+	ogImage={post.coverImage.src}
+	ogImageAlt={post.coverImage.alt}
+>
+	<!-- Meta tags específicos de artículos -->
+	<meta slot="head" name="author" content={post.author} />
+	<meta slot="head" property="article:published_time" content={post.publishedAt} />
+	<meta slot="head" property="article:author" content={post.author} />
+	<meta slot="head" property="article:tag" content={post.tags} />
 
-		<!-- SEO -->
-		<meta name="description" content={post.excerpt} />
-		<meta name="author" content={post.author} />
-
-		<!-- Open Graph -->
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content={post.title} />
-		<meta property="og:description" content={post.excerpt} />
-		<meta property="og:image" content={post.coverImage.src} />
-		<meta property="og:image:alt" content={post.coverImage.alt} />
-		<meta property="og:url" content={Astro.url.href} />
-		<meta property="og:site_name" content="The Artemis Diary" />
-		<meta property="article:published_time" content={post.publishedAt} />
-		<meta property="article:author" content={post.author} />
-		<meta property="article:tag" content={post.tags} />
-
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={post.title} />
-		<meta name="twitter:description" content={post.excerpt} />
-		<meta name="twitter:image" content={post.coverImage.src} />
-		<style>
-			* { box-sizing: border-box; margin: 0; padding: 0; }
-			body { font-family: sans-serif; background: #0a0a0f; color: #eee; }
-
+	<style is:global>
 			.hero {
 				width: 100%;
 				max-height: 480px;
@@ -110,42 +91,37 @@ function localImg(src: string) {
 			.content h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; }
 			.content h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: #ccc; }
 			.content p { margin-bottom: 1rem; color: #ccc; }
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="container">
-					<header>
-						<a class="back" href={`${base}/`}>← Back to stories</a>
-						<figure class="hero">
-							<img src={localImg(post.coverImage.src)} alt={post.coverImage.alt} />
-						</figure>
-						<h1>{post.title}</h1>
-						<footer class="meta">
-							<time datetime={post.publishedAt}>{new Date(post.publishedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-							</time>
-							<span aria-hidden="true">·</span>
-							<!--<address rel="author">{post.author}</address>
-							<span aria-hidden="true">·</span> -->
-							<span>{post.readingTime} min de lectura</span>
-						</footer>
-						<!--
-						<ul class="tags" role="list" aria-label="Etiquetas">
-							{post.tags.split(",").map((tag: string) => (
-								<li class="tag">{tag.trim()}</li>
-							))}
-						</ul>
-						-->
-					</header>
+	</style>
 
-					<section class="content" set:html={post.content} aria-label="Contenido del artículo" />
-				</div>
-			</article>
-			<RelatedArticles posts={relatedPosts} base={base} localImg={localImg} />
-		</main>
-		
-		<Footer />
-	</body>
-</html>
+	<main>
+		<article>
+			<div class="container">
+				<header>
+					<a class="back" href={`${base}/`}>← Back to stories</a>
+					<figure class="hero">
+						<img src={localImg(post.coverImage.src)} alt={post.coverImage.alt} />
+					</figure>
+					<h1>{post.title}</h1>
+					<footer class="meta">
+						<time datetime={post.publishedAt}>{new Date(post.publishedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+						</time>
+						<span aria-hidden="true">·</span>
+						<!--<address rel="author">{post.author}</address>
+						<span aria-hidden="true">·</span> -->
+						<span>{post.readingTime} min de lectura</span>
+					</footer>
+					<!--
+					<ul class="tags" role="list" aria-label="Etiquetas">
+						{post.tags.split(",").map((tag: string) => (
+							<li class="tag">{tag.trim()}</li>
+						))}
+					</ul>
+					-->
+				</header>
+
+				<section class="content" set:html={post.content} aria-label="Contenido del artículo" />
+			</div>
+		</article>
+		<RelatedArticles posts={relatedPosts} base={base} localImg={localImg} />
+	</main>
+</BaseLayout>

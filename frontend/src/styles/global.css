@@ -4,6 +4,9 @@
   --font-family: "Inter", sans-serif;
 
   /* COLORS */
+
+  --bg-tets:#FFF;
+
   --color-background: #000000;
   --color-surface: #0a0a0c;
   --color-surface-elevated: #14141a;
@@ -55,9 +58,8 @@
 
 body {
   font-family: var(--font-family);
-  background: var(--color-background);
+  background: var(--bg-tets);
   color: var(--color-text);
-
   padding: var(--var-padding-mobile);
 }
 
