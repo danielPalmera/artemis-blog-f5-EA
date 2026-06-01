@@ -17,35 +17,28 @@ const {
 ---
 
 <article class="card">
-	<a href={`${base}/posts/${post.slug}`}>
+
 		<figure>
 			<img
 				src={localImg(post.coverImage.src)}
 				alt={post.coverImage.alt}
+				loading="lazy"
 			/>
 		</figure>
 
 		<div class="card-body">
+			<time datetime={post.publishedAt}>
+				{new Date(post.publishedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+			</time>
 			<h2 class:list={[
 				"card-title",
 				isFeatured && "featured-title"
 			]}>
 				{post.title}
 			</h2>
-
-			<footer class="card-meta">
-				<time datetime={post.publishedAt}>
-					{post.publishedAt}
-				</time>
-
-				<span> · </span>
-
-				<address>
-					{post.author}
-				</address>
-			</footer>
+			<p>{post.excerpt}</p>
+			<a href={`${base}/posts/${post.slug}`}>Read story →</a>
 		</div>
-	</a>
 </article>
 
 <style>

@@ -1,0 +1,57 @@
+---
+import type { Post } from "../types/post";
+import PostCard from "./PostCard.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const res = await fetch("http://localhost:3000/api/v1/posts");
+
+const posts: Post[] = await res.json();
+
+function localImg(src: string) {
+    return src.replace(/^https?:\/\/[^/]+\/images\//, `${base}/images/`);
+}
+---
+
+<ul class="grid" role="list">
+    {
+        posts.map((post: Post, index: number) => (
+            <li>
+                <PostCard
+                    post={post}
+                    base={base}
+                    localImg={localImg}
+                    isFeatured={index === 0}
+                />
+            </li>
+        ))
+    }
+</ul>
+<style>
+  main {
+    width: 100%;
+  }
+
+  ul.grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    ul.grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 260px;
+    }
+
+    ul.grid > li:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  }
+
+  ul.grid > li {
+    min-height: 0;
+  }
+</style>
