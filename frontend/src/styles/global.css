@@ -50,24 +50,37 @@
   --var-padding-desktop: 6rem;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@layer base {
+  * {
+    @apply box-border m-0 p-0;
+  }
 
-body {
-  font-family: var(--font-family);
-  background: var(--bg-tets);
-  color: var(--color-text);
-  padding: var(--var-padding-mobile);
-}
+  html {
+    @apply bg-[var(--color-background)];
+  }
 
-@media (min-width: 768px) {
   body {
-    padding:
-      6rem
-      var(--var-padding-desktop)
-      4rem;
+    font-family: var(--font-family);
+
+    @apply
+      min-h-screen
+      overflow-x-hidden
+
+      bg-[var(--color-background)]
+      text-[var(--color-text)]
+
+      p-[var(--var-padding-mobile)]
+
+      md:px-[var(--var-padding-desktop)]
+      md:pt-[6rem]
+      md:pb-[4rem];
+  }
+
+  img {
+    @apply block max-w-full;
+  }
+
+  a {
+    @apply no-underline text-inherit;
   }
 }
