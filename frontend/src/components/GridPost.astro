@@ -9,7 +9,7 @@ const res = await fetch("http://localhost:3000/api/v1/posts");
 const posts: Post[] = await res.json();
 ---
 
-<ul class="list-none grid grid-cols-1 gap-0" role="list">
+<ul class="list-none grid grid-cols-1 gap-0">
     {
         posts.map((post: Post, index: number) => (
             <li>
