@@ -4,11 +4,10 @@ import type { Post } from "../types/post";
 interface Props {
   post: Post;
   base: string;
-  localImg: (src: string) => string;
   isFeatured?: boolean;
 }
 
-const { post, base, localImg, isFeatured = false } = Astro.props;
+const { post, base, isFeatured = false } = Astro.props;
 ---
 
 <article class="card">
@@ -23,7 +22,7 @@ const { post, base, localImg, isFeatured = false } = Astro.props;
   >
     <figure>
       <img
-        src={localImg(post.coverImage.src)}
+        src={post.coverImage.src}
         alt={post.coverImage.alt}
         loading="lazy"
       />

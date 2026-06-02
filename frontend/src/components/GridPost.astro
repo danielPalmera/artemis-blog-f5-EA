@@ -7,10 +7,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const res = await fetch("http://localhost:3000/api/v1/posts");
 
 const posts: Post[] = await res.json();
-
-function localImg(src: string) {
-    return src.replace(/^https?:\/\/[^/]+\/images\//, `${base}/images/`);
-}
 ---
 
 <ul class="grid" role="list">
@@ -20,7 +16,6 @@ function localImg(src: string) {
                 <PostCard
                     post={post}
                     base={base}
-                    localImg={localImg}
                     isFeatured={index === 0}
                 />
             </li>

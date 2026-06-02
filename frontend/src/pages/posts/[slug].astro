@@ -54,7 +54,7 @@ function localImg(src: string) {
 
 	
 		<article>
-			<div class="container">
+			<div class="container flex flex-col">
 				<HeaderPost post={post} base={base} localImg={localImg} />
 				<section class="content" set:html={post.content} aria-label="Contenido del artículo" />
 			</div>
