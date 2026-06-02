@@ -3,15 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import GridPost from "../components/GridPost.astro";
 import Hero from "../components/Hero.astro";
 ---
+
 <BaseLayout
   title="The Artemis Diary"
   description="Crónicas de la misión Artemis II: el regreso de la humanidad al espacio profundo."
   ogImage={`${Astro.site}images/artemis-mission.jpg`}
 >
-  <main>
-    <Hero />
-    <GridPost/>
-  </main>
+  <Hero />
+  <GridPost />
 </BaseLayout>
-
-
