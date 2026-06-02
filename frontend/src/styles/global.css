@@ -22,6 +22,16 @@
   --color-header-line: #1e1e2e;
 
   /* TYPOGRAPHY */
+  --fs-display-xl:96px;
+  --fs-heading-h1:64px;
+  --fs-heading-h2:40px;
+  --fs-heading-h3:24px;
+  --fs-body-large:20px;
+  --fs-body-regular:16px;
+  --fs-body-small:12.8px;
+  --fs-caption:13px;
+  --fs-label:12px;
+
 
   /* DISPLAY */
   --text-display-xl: 6rem;
