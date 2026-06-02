@@ -1,6 +1,6 @@
 ---
-import RelatedArticlesList from "../components/RelatedArticlesList.astro";	
-import type { Post } from '../types/post';
+import RelatedArticlesList from "../components/RelatedArticlesList.astro";
+import type { Post } from "../types/post";
 
 interface Props {
 	posts: Post[];
@@ -11,25 +11,25 @@ interface Props {
 const { posts, base, localImg } = Astro.props;
 ---
 
-<aside aria-label="Artículos relacionados">
-	<header class="mb-[var(--space24)] border-t border-[var(--color-border)] pt-[var(--space24)]">
-		<p class="label ">CONTINUE READING</p>
-		<h2 class=" mb-[var(--space24)]">Related stories</h2>
+<aside aria-label="Artículos relacionados ">
+	<header
+		class="flex flex-col
+    pt-[var(--space48)]
+    pb-[var(--space64)]
+    px-[var(--space24)]
+    border-t border-[var(--color-border)]
+    gap-[var(--space8)]"
+	>
+		<p
+			class="font-medium leading-[120%] tracking-[1.6px] uppercase text-[length:var(--fs-label)] text-[color:var(--color-accent-gold)]"
+		>
+			CONTINUE READING
+		</p>
+		<h3
+			class="leading-[130%] tracking-[-0.3px] font-bold text-[length:var(--fs-heading-h3)]"
+		>
+			Related stories
+		</h3>
 	</header>
 	<RelatedArticlesList posts={posts} base={base} localImg={localImg} />
 </aside>
-
-
-<style>
-	h2 {
-		font-size: 2rem;
-	}
-	.label {
-		font-size: 0.875rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		color: #d4a574;
-		margin-bottom: var(--space-sm);
-		font-weight: 600;
-	}
-</style>
