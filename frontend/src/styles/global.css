@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 :root {
   --font-family: "Inter", sans-serif;
 
@@ -65,39 +64,4 @@
   /* LAYOUT */
   --var-padding-mobile: 0rem;
   --var-padding-desktop: 6rem;
-}
-
-@layer base {
-  * {
-    @apply box-border m-0 p-0;
-  }
-
-  html {
-    @apply bg-(--color-background);
-  }
-
-  body {
-    font-family: var(--font-family);
-
-    @apply
-      min-h-screen
-      overflow-x-hidden
-
-      bg-(--color-background)
-      text-(--color-text)
-
-      p-(--var-padding-mobile)
-
-      md:px-(--var-padding-desktop)
-      md:pt-[0rem]
-      md:pb-[0rem];
-  }
-
-  img {
-    @apply block max-w-full;
-  }
-
-  a {
-    @apply no-underline text-inherit;
-  }
 }
