@@ -4,14 +4,12 @@ import type { Post } from "../types/post";
 interface Props {
 	post: Post;
 	base: string;
-	localImg: (src: string) => string;
 	isFeatured?: boolean;
 }
 
 const {
 	post,
 	base,
-	localImg,
 	isFeatured = false
 } = Astro.props;
 ---
@@ -20,7 +18,7 @@ const {
 	<a href={`${base}/posts/${post.slug}`}></a>
 		<figure>
 			<img
-				src={localImg(post.coverImage.src)}
+				src={post.coverImage.src}
 				alt={post.coverImage.alt}
 			/>
 		</figure>
