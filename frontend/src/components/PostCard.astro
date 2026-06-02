@@ -7,7 +7,7 @@ interface Props {
   isFeatured?: boolean;
 }
 
-const { post, base, isFeatured = false } = Astro.props;
+const { post, base} = Astro.props;
 ---
 
 <article class="card">
@@ -41,14 +41,14 @@ const { post, base, isFeatured = false } = Astro.props;
       <h2
         class:list={[
           "card-title",
-          "text-[var(--color-text)]",
-          isFeatured && "featured-title",
+          "text-[var(--color-text)]"
         ]}
+        
       >
         {post.title}
       </h2>
-      <p>{post.excerpt}</p>
-      <span class="text-[var(color-text-muted)]"> Read story → </span>
+      <p class="line-clamp-1">{post.excerpt}</p>
+      <span class="hidden lg:inline text-[var(color-text-muted)]"> Read story → </span>
     </div>
   </a>
 </article>
