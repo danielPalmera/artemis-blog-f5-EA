@@ -2,108 +2,123 @@
 import type { Post } from "../types/post";
 
 interface Props {
-	post: Post;
-	base: string;
-	localImg: (src: string) => string;
-	isFeatured?: boolean;
+  post: Post;
+  base: string;
+  localImg: (src: string) => string;
+  isFeatured?: boolean;
 }
 
-const {
-	post,
-	base,
-	localImg,
-	isFeatured = false
-} = Astro.props;
+const { post, base, localImg, isFeatured = false } = Astro.props;
 ---
 
 <article class="card">
+  <a
+    href={`${base}/posts/${post.slug}`}
+    class="block
+    rounded-[10px]
+    focus:outline
+    focus:outline-2
+    focus:outline-[var(--color-accent-blue)]
+    focus:outline-offset-4"
+  >
+    <figure>
+      <img
+        src={localImg(post.coverImage.src)}
+        alt={post.coverImage.alt}
+        loading="lazy"
+      />
+    </figure>
 
-		<figure>
-			<img
-				src={localImg(post.coverImage.src)}
-				alt={post.coverImage.alt}
-				loading="lazy"
-			/>
-		</figure>
-
-		<div class="card-body">
-			<time datetime={post.publishedAt}>
-				{new Date(post.publishedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-			</time>
-			<h2 class:list={[
-				"card-title",
-				isFeatured && "featured-title"
-			]}>
-				{post.title}
-			</h2>
-			<p>{post.excerpt}</p>
-			<a href={`${base}/posts/${post.slug}`}>Read story →</a>
-		</div>
+    <div class="card-body">
+      <time datetime={post.publishedAt}>
+        {
+          new Date(post.publishedAt + "T12:00:00").toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
+      </time>
+      <h2
+        class:list={[
+          "card-title",
+          "text-[var(--color-text)]",
+          isFeatured && "featured-title",
+        ]}
+      >
+        {post.title}
+      </h2>
+      <p>{post.excerpt}</p>
+      <span class="text-[var(color-text-muted)]"> Read story → </span>
+    </div>
+  </a>
 </article>
 
 <style>
-	.card {
-		background: #16161f;
-		border-radius: 10px;
-		overflow: hidden;
-		transition: transform 0.2s, box-shadow 0.2s;
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-	}
+  .card {
+    background: #16161f;
+    border-radius: 10px;
+    overflow: visible;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
-	.card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-	}
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
 
-	.card a {
-		text-decoration: none;
-		color: inherit;
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-	}
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
-	.card figure {
-		flex: 1;
-		min-height: 0;
-		overflow: hidden;
-	}
+  .card figure {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
 
-	.card figure img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
-	}
+  .card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
-	.card-body {
-		/* padding: 0.75rem 1rem; */
-		display: flex;
-		flex-direction: column;
-		gap: 0.3rem;
-	}
+  .card-body {
+    /* padding: 0.75rem 1rem; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
 
-	.card-title {
-		font-size: 1rem;
-		font-weight: 600;
-		line-height: 1.4;
-	}
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
 
-	.featured-title {
-		font-size: 1.4rem;
-	}
+  .featured-title {
+    font-size: 1.4rem;
+  }
 
-	.card-meta {
-		font-size: 0.75rem;
-		color: #888;
-		margin-top: 0.25rem;
-		display: flex;
-		gap: 0.25rem;
-	}
+  .card-meta {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0.25rem;
+    display: flex;
+    gap: 0.25rem;
+  }
 
-	address {
-		font-style: normal;
-	}
+  address {
+    font-style: normal;
+  }
 </style>
