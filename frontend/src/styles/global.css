@@ -21,16 +21,15 @@
   --color-header-line: #1e1e2e;
 
   /* TYPOGRAPHY */
-  --fs-display-xl:96px;
-  --fs-heading-h1:64px;
-  --fs-heading-h2:40px;
-  --fs-heading-h3:24px;
-  --fs-body-large:20px;
-  --fs-body-regular:16px;
-  --fs-body-small:12.8px;
-  --fs-caption:13px;
-  --fs-label:12px;
-
+--display-xl: 6rem;      /* 96px */
+--heading-h1: 4rem;      /* 64px */
+--heading-h2: 2.5rem;    /* 40px */
+--heading-h3: 1.5rem;    /* 24px */
+--body-large: 1.25rem;   /* 20px */
+--body-regular: 1rem;    /* 16px */
+--body-small: 0.8rem;    /* 12.8px */
+--caption: 0.8125rem;    /* 13px */
+--label: 0.75rem;        /* 12px */
 
   /* DISPLAY */
   --text-display-xl: 6rem;
