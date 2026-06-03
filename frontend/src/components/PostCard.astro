@@ -10,11 +10,11 @@ interface Props {
 const { post, base } = Astro.props;
 ---
 
-<article class="rounded-[5px] overflow-hidden h-full">
+<article class="rounded-[12px] overflow-hidden h-full">
   <a
     href={`${base}/posts/${post.slug}`}
     aria-label={post.title}
-    class="group relative block w-full aspect-[4/3] no-underline text-inherit rounded-[10px] overflow-hidden
+    class="group relative block w-full aspect-[1/1] no-underline text-inherit rounded-[10px] overflow-hidden
           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent-blue)]"
   >
     <img
