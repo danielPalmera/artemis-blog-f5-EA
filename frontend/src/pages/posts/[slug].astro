@@ -21,9 +21,7 @@ const relatedPosts = allPosts
 	.filter(p => p.slug !== post.slug && String(p.tags).split(',').map(t => t.trim().toLowerCase()).includes(firstTag))
 	.slice(0, 3);
 
-function localImg(src: string) {
-	return src.replace(/^https?:\/\/[^/]+\/images\//, `${base}/images/`);
-}
+
 ---
 
 <BaseLayout
@@ -37,9 +35,10 @@ function localImg(src: string) {
 	<meta slot="head" property="article:published_time" content={post.publishedAt} />
 	<meta slot="head" property="article:author" content={post.author} />
 	<meta slot="head" property="article:tag" content={post.tags} />
+
 	<style is:global>
-		.content { line-height: 1.8; font-size: 1rem; }
-		.content h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; }
+		.content { font-size: 1rem; }
+		.content h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; color: #ccc; }
 		.content h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: #ccc; }
 		.content p { margin-bottom: 1rem; color: #ccc; }
 	</style>
@@ -47,7 +46,7 @@ function localImg(src: string) {
 	<article>
 		<div class="w-full lg:max-w-[760px] lg:mx-auto flex flex-col px-6 lg:px-0 py-8 lg:py-16">
 			<HeaderPost post={post} base={base} />
-			<section class="content" set:html={post.content} aria-label="Contenido del artículo" />
+			<section class="content leading-[1.8] text-[color:var(--color-text)]" set:html={"<spam class='font-bold'>"+post.excerpt+"</spam>" + post.content} aria-label="Contenido del artículo" />
 		</div>
 	</article>
 	<RelatedArticles posts={relatedPosts} base={base} />
