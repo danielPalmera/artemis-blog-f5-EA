@@ -1,6 +1,6 @@
 @import "tailwindcss";
 :root {
-  --font-family: "Inter", sans-serif;
+  /*--font-family: "Inter", sans-serif;*/
 
   /* COLORS */
 
@@ -30,7 +30,22 @@
 --body-small: 0.8rem;    /* 12.8px */
 --caption: 0.8125rem;    /* 13px */
 --label: 0.75rem;        /* 12px */
-
+/*
+clase     font-size	  rem	  pixels	line-height
+text-xs	  0.75rem	    12px	1rem    (16px)
+text-sm	  0.875rem	  14px	1.25rem (20px)
+text-base	1rem (Base)	16px	1.5rem  (24px)
+text-lg	  1.125rem	  18px	1.75rem (28px)
+text-xl	  1.25rem	    20px	1.75rem (28px)
+text-2xl	1.5rem	    24px	2rem    (32px)
+text-3xl	1.875rem	  30px	2.25rem (36px)
+text-4xl	2.25rem	    36px	2.5rem  (40px)
+text-5xl	3rem	      48px	3rem    (48px)
+text-6xl	3.75rem	    60px	3.75rem (60px)
+text-7xl	4.5rem	    72px	4.5rem  (72px)
+text-8xl	6rem	      96px	6rem    (96px)
+text-9xl	8rem	      128px	8rem    (128px)
+*/
   /* DISPLAY */
   --text-display-xl: 6rem;
 
@@ -47,6 +62,10 @@
   /* FOOTER */
   --text-footer-title: 0.8rem;
 
+}
+
+@theme {
+  --font-display: "Inter", sans-serif;
 }
 
 .content { font-size: 1rem; }
