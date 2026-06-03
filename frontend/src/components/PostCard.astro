@@ -7,133 +7,39 @@ interface Props {
   isFeatured?: boolean;
 }
 
-const { post, base} = Astro.props;
+const { post, base } = Astro.props;
 ---
 
-<article class="card">
+<article class="rounded-[5px] overflow-hidden h-full">
   <a
     href={`${base}/posts/${post.slug}`}
-    class="block
-    rounded-[10px]
-    focus:outline
-    focus:outline-2
-    focus:outline-[var(--color-accent-blue)]
-    focus:outline-offset-4"
+    aria-label={post.title}
+    class="group relative block w-full aspect-[4/3] no-underline text-inherit rounded-[10px] overflow-hidden
+          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent-blue)]"
   >
-    <figure>
-      <img
-        src={post.coverImage.src}
-        alt={post.coverImage.alt}
-        loading="lazy"
-      />
-    </figure>
+    <img
+      class="absolute inset-0 w-full h-full object-cover block transition-transform duration-[400ms] ease-in-out group-hover:scale-105"
+      src={post.coverImage.src}
+      alt={post.coverImage.alt}
+    />
 
-    <div class="card-body">
-      <time datetime={post.publishedAt}>
-        {
-          new Date(post.publishedAt + "T12:00:00").toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })
-        }
-      </time>
-      <h2
-        class:list={[
-          "card-title",
-          "text-[var(--color-text)]"
-        ]}
-        
-      >
-        {post.title}
-      </h2>
-      <p class="line-clamp-1">{post.excerpt}</p>
-      <span class="hidden lg:inline text-[var(color-text-muted)]"> Read story → </span>
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.55)_50%,rgba(0,0,0,0.85)_100%)] flex items-end">
+      <div class="p-[var(--space32)] flex flex-col gap-[var(--space16)] text-white w-full
+                  opacity-100 translate-y-0 transition-[opacity,transform] duration-[350ms] ease-in-out
+                  lg:opacity-0 lg:translate-y-3 lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+        <time class="text-xs opacity-80 tracking-wide" datetime={post.publishedAt}>
+          {
+            new Date(post.publishedAt + "T12:00:00").toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
+        <h2 class="text-base font-bold leading-[1.35] m-0">{post.title}</h2>
+        <p class="text-[0.85rem] opacity-[0.85] line-clamp-1 m-0">{post.excerpt}</p>
+        <span class="text-[0.8rem] font-semibold opacity-90 mt-1 tracking-wide">Read story →</span>
+      </div>
     </div>
   </a>
 </article>
-
- <style>
-   class = 
-   "bg-[var(--color-background)]
-    rounded-[var(--space12)]
-    overflow:visible
-
-    transition-transform 0.2s
-    transition-shadow
-    duration=200
-
-    flex
-    flex-col
-    h-full   
-   "
-
-  /* .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  } */
-  
-   
-  hover:translate-Y[var(-space4:4px)]
-  hover:transition [0 8px 24px rgba(0, 0, 0, 0.4]
-  
-  
-
-
-
-"
-
-
-
-
-
-  .card a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .card figure {
-    flex: 1;
-    min-height: 0;
-    overflow: hidden;
-  }
-
-  .card figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .card-body {
-    /* padding: 0.75rem 1rem; */
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .card-title {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.4;
-  }
-
-  .featured-title {
-    font-size: 1.4rem;
-  }
-
-  .card-meta {
-    font-size: 0.75rem;
-    color: #888;
-    margin-top: 0.25rem;
-    display: flex;
-    gap: 0.25rem;
-  }
-
-  address {
-    font-style: normal;
-  }
-</style>
