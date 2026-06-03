@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
-import HeaderPost from '../../components/HeaderPost.astro';
+import HeaderPost from '../../components/headerPost.astro';
 import type { Post } from '../../types/post';
 
 export async function getStaticPaths() {
@@ -37,9 +37,9 @@ const relatedPosts = allPosts
 	<meta slot="head" property="article:tag" content={post.tags} />
 	
 	<article>
-		<div class="w-full lg:max-w-[760px] lg:mx-auto flex flex-col px-6 lg:px-0 py-8 lg:py-16">
+		<div class="w-full lg:max-w-190 lg:mx-auto flex flex-col px-6 lg:px-0 py-8 lg:py-16">
 			<HeaderPost post={post} base={base} />
-			<section class="content leading-[1.8] text-[color:var(--color-text)]" set:html={"<spam class='font-bold'>"+post.excerpt+"</spam>" + post.content} aria-label="Contenido del artículo" />
+			<section class="content leading-[1.8] text-(--color-text)" set:html={"<spam class='font-bold'>"+post.excerpt+"</spam>" + post.content} aria-label="Contenido del artículo" />
 		</div>
 	</article>
 	<RelatedArticles posts={relatedPosts} base={base} />
