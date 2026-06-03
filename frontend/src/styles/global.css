@@ -27,38 +27,6 @@
 --caption: 0.8125rem;    /* 13px */
 --label: 0.75rem;        /* 12px */     
 
-/*
-clase     font-size	  rem	  pixels	line-height
-text-xs	  0.75rem	    12px	1rem    (16px)
-text-sm	  0.875rem	  14px	1.25rem (20px)
-text-base	1rem (Base)	16px	1.5rem  (24px)
-text-lg	  1.125rem	  18px	1.75rem (28px)
-text-xl	  1.25rem	    20px	1.75rem (28px)
-text-2xl	1.5rem	    24px	2rem    (32px)
-text-3xl	1.875rem	  30px	2.25rem (36px)
-text-4xl	2.25rem	    36px	2.5rem  (40px)
-text-5xl	3rem	      48px	3rem    (48px)
-text-6xl	3.75rem	    60px	3.75rem (60px)
-text-7xl	4.5rem	    72px	4.5rem  (72px)
-text-8xl	6rem	      96px	6rem    (96px)
-text-9xl	8rem	      128px	8rem    (128px)
-*/
-  /* DISPLAY */
-  --text-display-xl: 6rem;
-
-  /* HEADINGS */
-  --text-h1: 4rem;
-  --text-h2: 2.5rem;
-  --text-h3: 1.5rem;
-
-  /* BODY */
-  --text-body-lg: 1.25rem;
-  --text-body-md: 1rem;
-  --text-body-sm: 0.8rem;
-
-  /* FOOTER */
-  --text-footer-title: 0.8rem;
-
 }
 
 @theme {
@@ -66,10 +34,16 @@ text-9xl	8rem	      128px	8rem    (128px)
 }
 
 @utility display-xl {
-  font-size: clamp(2.5rem, 0.9rem + 8vw, 6rem);
+  font-size: clamp(2.5rem, 0.9rem + 8vw, var(--display-xl));
   font-weight: 700;
   letter-spacing: -0.03em;
 }
+@utility heading-h2 {
+  font-size: clamp(2rem, 0.9rem + 4vw, var(--heading-h2));
+  font-weight: 700;
+  line-height: 1;
+}
+
 
 .content { font-size: 1rem; }
 .content h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; color: #ccc; }
