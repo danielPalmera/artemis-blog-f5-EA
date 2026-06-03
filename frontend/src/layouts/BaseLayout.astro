@@ -58,7 +58,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <!-- Slot para meta tags adicionales específicos de cada página -->
     <slot name="head" />
   </head>
-  <body class="bg-[var(--color-background)]">
+  <body class="bg-(--color-background)">
     <Header />
     <main class="w-full lg:container lg:mx-auto lg:px-4">
       <slot />
