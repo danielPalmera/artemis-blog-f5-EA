@@ -10,35 +10,41 @@ interface Props {
 const { post, base } = Astro.props;
 ---
 
-<article class="rounded-[12px] overflow-hidden h-full">
+<article class="rounded-[12px] h-full relative z-0 focus-within:z-10">
   <a
     href={`${base}/posts/${post.slug}`}
     aria-label={post.title}
-    class="group relative block w-full aspect-[1/1] no-underline text-inherit rounded-[10px] overflow-hidden
-          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent-blue)]"
+    class="group relative block w-full h-full aspect-[1/1] no-underline text-inherit
+          rounded-[12px]
+          focus-visible:outline 
+          focus-visible:outline-2
+          focus-visible:outline-offset-0
+          focus-visible:outline-[var(--color-accent-blue)]"
   >
-    <img
-      class="absolute inset-0 w-full h-full object-cover block transition-transform duration-[400ms] ease-in-out group-hover:scale-105"
-      src={post.coverImage.src}
-      alt={post.coverImage.alt}
-    />
+    <div class="absolute inset-0 rounded-[12px] overflow-hidden">
+      <img
+        class="absolute inset-0 w-full h-full object-cover block transition-transform duration-[400ms] ease-in-out group-hover:scale-105"
+        src={post.coverImage.src}
+        alt={post.coverImage.alt}
+      />
 
-    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.55)_50%,rgba(0,0,0,0.85)_100%)] flex items-end">
-      <div class="p-[var(--space32)] flex flex-col gap-[var(--space16)] text-white w-full
-                  opacity-100 translate-y-0 transition-[opacity,transform] duration-[350ms] ease-in-out
-                  lg:opacity-0 lg:translate-y-3 lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
-        <time class="text-xs opacity-80 tracking-wide" datetime={post.publishedAt}>
-          {
-            new Date(post.publishedAt + "T12:00:00").toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })
-          }
-        </time>
-        <h2 class="text-base font-bold leading-[1.35] m-0">{post.title}</h2>
-        <p class="text-[0.85rem] opacity-[0.85] line-clamp-1 m-0">{post.excerpt}</p>
-        <span class="text-[0.8rem] font-semibold opacity-90 mt-1 tracking-wide">Read story →</span>
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.55)_50%,rgba(0,0,0,0.85)_100%)] flex items-end">
+        <div class="p-[var(--space32)] flex flex-col gap-[var(--space16)] text-white w-full
+                    opacity-100 translate-y-0 transition-[opacity,transform] duration-[350ms] ease-in-out
+                    lg:opacity-0 lg:translate-y-3 lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+          <time class="text-xs opacity-80 tracking-wide" datetime={post.publishedAt}>
+            {
+              new Date(post.publishedAt + "T12:00:00").toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }
+          </time>
+          <h2 class="text-base font-bold leading-[1.35] m-0">{post.title}</h2>
+          <p class="text-[0.85rem] opacity-[0.85] line-clamp-1 m-0">{post.excerpt}</p>
+          <span class="text-[0.8rem] font-semibold opacity-90 mt-1 tracking-wide">Read story →</span>
+        </div>
       </div>
     </div>
   </a> 
