@@ -34,10 +34,11 @@
 }
 
 @utility display-xl {
-  font-size: clamp(2.5rem, 0.9rem + 8vw, var(--display-xl));
+  font-size: clamp(var(--heading-h2), 0.9rem + 8vw, var(--display-xl));
   font-weight: 700;
   letter-spacing: -0.03em;
 }
+
 @utility heading-h2 {
   font-size: clamp(2rem, 0.9rem + 4vw, var(--heading-h2));
   font-weight: 700;
