@@ -3,17 +3,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <header
-  class="py-4 px-[20px] flex items-center bg-[var(--color-header-bg)] border-b border-[var(--color-header-line)]"
+  class="py-4 px-5 flex items-center bg-(--color-header-bg) border-b border-(--color-header-line)"
 >
   <div class="w-full lg:container lg:mx-auto lg:px-16">
   <a
       href={`${base}/`}
       aria-label="Ir al inicio"
       class="inline-block rounded-sm
-      focus-visible:outline 
       focus-visible:outline-2
       focus-visible:outline-offset-4
-      focus-visible:outline-[var(--color-accent-blue)]"
+      focus-visible:outline-(--color-accent-blue)"
     >
       <img
         src={`${base}/images/artemis-logo.png`}
