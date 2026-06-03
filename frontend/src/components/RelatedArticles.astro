@@ -13,22 +13,22 @@ const { posts, base} = Astro.props;
 <aside aria-label="Artículos relacionados ">
 	<header
 		class="flex flex-col
-				pt-[var(--space48)]
-				pb-[var(--space64)]
-				px-[var(--space24)]
-				border-t border-[var(--color-border)]
-				gap-[var(--space8)]"
+				pt-(--space48)
+				pb-(--space64)
+				px-(--space24)
+				border-(--color-border)
+				gap-(--space8)"
 			>
 		<p class="
 		font-medium
 		leading-[120%]
 		tracking-[1.6px]
 		uppercase
-		text-[length:var(--fs-label)]
-		text-[color:var(--color-accent-gold)]"
+		text-(length:--fs-label)
+		text-(--color-accent-gold)"
 		>CONTINUE READING</p>
 
-		<h3 class="leading-[130%] tracking-[-0.3px] font-bold text-[length:var(--fs-heading-h3)]" >Related stories</h3>
+		<h3 class="leading-[130%] tracking-[-0.3px] font-bold text-(length:--fs-heading-h3) text-(--color-text)" >Related stories</h3>
 
 	</header>
 	<RelatedArticlesList posts={posts} base={base} />
