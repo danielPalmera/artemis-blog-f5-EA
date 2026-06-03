@@ -3,11 +3,10 @@ import RelatedArticlesList from "../components/RelatedArticlesList.astro";
 import type { Post } from "../types/post";
 
 interface Props {
-	posts: Post[];
-	base: string;
+    posts: Post[];
 }
 
-const { posts, base} = Astro.props;
+const { posts } = Astro.props;
 ---
 
 <aside aria-label="Artículos relacionados ">
@@ -31,5 +30,5 @@ const { posts, base} = Astro.props;
 		<h3 class="leading-[130%] tracking-[-0.3px] font-bold text-(length:--heading-h3) text-(--color-text)" >Related stories</h3>
 
 	</header>
-	<RelatedArticlesList posts={posts} base={base} />
+	<RelatedArticlesList posts={posts} />
 </aside>

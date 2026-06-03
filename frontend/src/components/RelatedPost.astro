@@ -1,17 +1,13 @@
 ---
 import type { Post } from "../types/post";
+import base from "../lib/base";
 
 interface Props {
-	post: Post;
-	base: string;
-	isFeatured?: boolean;
+    post: Post;
+    isFeatured?: boolean;
 }
 
-const {
-	post,
-	base,
-	isFeatured = false
-} = Astro.props;
+const { post, isFeatured = false } = Astro.props;
 ---
 
 <article class="card">
