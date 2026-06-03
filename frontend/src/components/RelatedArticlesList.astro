@@ -2,34 +2,17 @@
 import type { Post } from '../types/post';
 import PostCard from './PostCard.astro';
 
+
 interface Props {
 	posts: Post[];
-	base: string;
 }
-/*
- <article style={`background-image: url('${relatedPost.coverImage.src}')`}>
-                <a href={`${base}/posts/${relatedPost.slug}`}>
-                    <div class="card-body">
-                        <time datetime={relatedPost.publishedAt}>
-                            {new Date(relatedPost.publishedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                        </time>
-                        <h2 class="card-title">
-                            {relatedPost.title}
-                        </h2>
-                    </div>
-                </a>
-            </article>
-*/
-const { posts, base} = Astro.props;
+const { posts } = Astro.props;
 ---
 <nav>
     <ul class="grid-3">
 		{posts.map(relatedPost => (
 			<li>
-				<PostCard
-						post={relatedPost}
-						base={base}
-					/>
+				<PostCard post={relatedPost} isRelated={true} />
 			</li>
 		))}
     </ul>

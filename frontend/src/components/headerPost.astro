@@ -1,12 +1,12 @@
 ---
 import type { Post } from "../types/post";
+import base from "../lib/base";
 
 interface Props {
-	post: Post;
-	base: string;
+    post: Post;
 }
 
-const { post, base} = Astro.props;
+const { post } = Astro.props;
 ---
 
 
