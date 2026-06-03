@@ -9,10 +9,10 @@ const res = await fetch("http://localhost:3000/api/v1/posts");
 const posts: Post[] = await res.json();
 ---
 
-<ul class="list-none grid grid-cols-1 gap-0">
+<ul class="list-none p-0 m-0 grid grid-cols-1 gap-0 md:grid-cols-3 md:auto-rows-[480px]">
     {
         posts.map((post: Post, index: number) => (
-            <li>
+            <li class={`min-h-0 ${index === 0 ? "md:col-span-2 md:row-span-2" : ""}`}>
                 <PostCard
                     post={post}
                     base={base}
@@ -21,22 +21,3 @@ const posts: Post[] = await res.json();
         ))
     }
 </ul>
-<style>
-
-
-  @media (min-width: 768px) {
-    ul.grid {
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: 260px;
-    }
-
-    ul.grid > li:first-child {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-  }
-
-  ul.grid > li {
-    min-height: 0;
-  }
-</style>
