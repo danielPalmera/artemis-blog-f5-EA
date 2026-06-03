@@ -60,11 +60,6 @@
   --space48:48px;
   --space64:64px;
   --space96:96px;
-
-
-  /* LAYOUT */
-  --var-padding-mobile: 0rem;
-  --var-padding-desktop: 6rem;
 }
 
 .content { font-size: 1rem; }
