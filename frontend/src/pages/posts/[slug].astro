@@ -35,13 +35,6 @@ const relatedPosts = allPosts
 	<meta slot="head" property="article:published_time" content={post.publishedAt} />
 	<meta slot="head" property="article:author" content={post.author} />
 	<meta slot="head" property="article:tag" content={post.tags} />
-
-	<style is:global>
-		.content { font-size: 1rem; }
-		.content h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; color: #ccc; }
-		.content h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: #ccc; }
-		.content p { margin-bottom: 1rem; color: #ccc; }
-	</style>
 	
 	<article>
 		<div class="w-full lg:max-w-[760px] lg:mx-auto flex flex-col px-6 lg:px-0 py-8 lg:py-16">

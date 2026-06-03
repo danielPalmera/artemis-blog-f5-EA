@@ -1,13 +1,10 @@
-<footer 
-aria-label="Footer" class="bg-[var(--color-surface)]
+<footer class="bg-[var(--color-surface)]
  px-[var(--space24)] 
  py-[var(--space32)]
  md:px-[var(--space32)]
  md:py-[var(--space24)]
  ">
-  
-  <div class="flex flex-col gap-[var(--space)]">
-    <div class="w-full lg:container lg:mx-auto lg:px-[var(--space64)]">
+<div class="lg:container lg:mx-auto lg:px-[var(--space64)] gap-[var(--space24)] flex flex-col items-start">
       <h3 
         class="text-[length:var(--text-footer-title)] text-[color:var(--color-text)] font-bold"
       >
@@ -15,16 +12,14 @@ aria-label="Footer" class="bg-[var(--color-surface)]
       </h3>
 
       <p
-        class="max-w-[260px] 
-        md:max-w-[950px]
+        class="
         text-[12px]
-        font-[500]
+        font-medium
         uppercase
         tracking-[0.12em] 
         text-[var(--color-text-secondary)]"
       >
-        <span class="line-clamp-1">© 2026 NASA · ARTEMIS II EDITORIAL — IMAGERY COURTESY OF NASA / JOHNSON SPACE CENTER</span>
+        © 2026 NASA · ARTEMIS II EDITORIAL<span class="hidden md:inline"> — IMAGERY COURTESY OF NASA / JOHNSON SPACE CENTER</span>
       </p>
     </div>
-  </div>
 </footer>

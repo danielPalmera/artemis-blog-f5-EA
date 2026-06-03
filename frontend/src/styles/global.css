@@ -66,3 +66,8 @@
   --var-padding-mobile: 0rem;
   --var-padding-desktop: 6rem;
 }
+
+.content { font-size: 1rem; }
+.content h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; color: #ccc; }
+.content h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: #ccc; }
+.content p { margin-bottom: 1rem; color: #ccc; }
