@@ -9,7 +9,7 @@ interface Props {
 const { posts } = Astro.props;
 ---
 <nav>
-    <ul class="grid-3">
+    <ul class="grid grid-cols-[repeat(auto-fit,minmax(380px,1fr))] gap-0 list-none">
 		{posts.map(relatedPost => (
 			<li>
 				<PostCard post={relatedPost} isRelated={true} />
@@ -17,11 +17,3 @@ const { posts } = Astro.props;
 		))}
     </ul>
 </nav>
-<style>
-	.grid-3 {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-		gap: 0;
-		list-style: none;
-	}
-</style>
