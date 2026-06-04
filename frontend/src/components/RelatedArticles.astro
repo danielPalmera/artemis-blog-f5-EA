@@ -10,23 +10,15 @@ const { posts } = Astro.props;
 ---
 
 <aside aria-label="Artículos relacionados ">
-	<header
-		class="flex flex-col
-				pt-12
-				pb-16
-				px-6
-				border-(--color-border)
-				gap-2"
-			>
+	<header class="flex flex-col pt-12 pb-16 px-6 border-(--color-border) gap-2">
 		<p class="
-		font-medium leading-[120%] tracking-[1.6px] uppercase text-(length:--label) text-(--color-accent-gold)"
+		font-medium leading-tight tracking-widest uppercase text-(length:--label) text-(--color-accent-gold)"
 		>CONTINUE READING</p>
 		<h3
-  		class="heading-h3 font-normal lg:font-bold leading-[140%] lg:leading-[130%] lg:tracking-[-0.3px] text-(--color-text)"
->
-  Related stories
-</h3>
-
+			class="heading-h3 font-normal lg:font-bold  leading-snug lg:tracking-tight  text-(--color-text)"
+		>
+			Related stories
+		</h3>
 	</header>
 	<RelatedArticlesList posts={posts} />
 </aside>
