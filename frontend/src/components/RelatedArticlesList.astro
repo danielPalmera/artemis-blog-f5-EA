@@ -2,14 +2,13 @@
 import type { Post } from '../types/post';
 import PostCard from './PostCard.astro';
 
-
 interface Props {
 	posts: Post[];
 }
 const { posts } = Astro.props;
 ---
 <nav>
-    <ul class="grid grid-cols-[repeat(auto-fit,minmax(380px,1fr))] gap-0 list-none">
+    <ul class="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-0 px-6 list-none">
 		{posts.map(relatedPost => (
 			<li>
 				<PostCard post={relatedPost} isRelated={true} />

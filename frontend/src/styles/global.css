@@ -67,3 +67,18 @@
 .content h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; color: #ccc; }
 .content h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: #ccc; }
 .content p { margin-bottom: 1rem; color: #ccc; }
+
+/*
+  Tabla de referencia:
+  Tabla de referencia:
+  Clase rem  Píxeles 
+  px-1 .25rem  4px
+  px-2 .5rem  8px
+  px-3 .75rem  12px
+  px-4 1rem  16px
+  px-5 1.25rem  20px
+  px-6 1.5rem  24px
+  px-7 1.75rem  28px
+  px-8 2rem  32px
+  px-10 2.5rem  40px
+*/
