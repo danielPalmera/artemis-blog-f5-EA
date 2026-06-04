@@ -37,6 +37,7 @@
   font-size: clamp(var(--heading-h2), 0.9rem + 8vw, var(--display-xl));
   font-weight: 700;
   letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 @utility heading-h2 {
@@ -55,7 +56,6 @@
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
-  letter-spacing: 0px;
 }
 
 @utility label {
@@ -73,8 +73,7 @@
 .content p { margin-bottom: 1rem; color: #ccc; }
 
 /*
-  Tabla de referencia:
-  Tabla de referencia:
+  Tabla de referencia espaciados:
   Clase rem  Píxeles 
   px-1 .25rem  4px
   px-2 .5rem  8px
@@ -85,4 +84,21 @@
   px-7 1.75rem  28px
   px-8 2rem  32px
   px-10 2.5rem  40px
+  px-11  2.75rem  44px
+  px-12  3rem  48px
+  px-14  3.5rem  56px
+  px-16  4rem  64px
+  px-20  5rem  80px
+  px-24  6rem  96px
+
+  Tabla de referencia tamaños
+    display-xl: 6rem;      96px 
+    heading-h1: 4rem;      64px 
+    heading-h2: 2.5rem;    40px 
+    heading-h3: 1.5rem;    24px 
+    body-large: 1.25rem;   20px 
+    body-regular: 1rem;    16px 
+    body-small: 0.8rem;    12.8px 
+    caption: 0.8125rem;    13px 
+    label: 0.75rem;        12px 
 */
