@@ -37,7 +37,7 @@ const { post, isRelated = false } = Astro.props;
             })}
           </time>
 
-          <h2 class="text-base font-bold leading-snug m-0">{post.title}</h2>
+          <h2 class={`${!isRelated ? 'font-bold' : ''} text-base  leading-snug m-0`}>{post.title}</h2>
 
           {!isRelated && (
             <>
