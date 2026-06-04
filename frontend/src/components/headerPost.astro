@@ -8,12 +8,12 @@ const { post } = Astro.props;
 ---
 
 <header class="flex flex-col gap-6 pb-8 lg:pt-12 lg:pb-0 lg:px-0 lg:gap-8 ">
-	<a class="font-medium leading-tight tracking-widest uppercase text-(length:--label) text-(--color-text-secondary) hover:text-(--color-text-primary)" href={`${base}/`}>← Back to stories</a>
+	<a class="label tracking-widest uppercase text-(--color-text-secondary) hover:text-(--color-text-primary)" href={`${base}/`}>← Back to stories</a>
 	<figure class="w-full max-h-80 overflow-hidden">
 		<img class="w-full h-120 object-cover" src={post.coverImage.src} alt={post.coverImage.alt} />
 	</figure>
-	<h1 class="font-bold text-(length:--heading-h2) text-(--color-text) leading-tight">{post.title}</h1>
-	<footer class="flex flex-col lg:flex-row lg:items-center leading-snug gap-x-2 font-medium text-(length:--label) text-(--color-text-secondary)">
+	<h1 class="heading-h2 text-(--color-text)">{post.title}</h1>
+	<footer class="label flex flex-col lg:flex-row lg:items-center gap-x-2 text-(--color-text-secondary)">
 		<time class="uppercase" datetime={post.publishedAt}>
 			{new Date(post.publishedAt + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
 		</time>
