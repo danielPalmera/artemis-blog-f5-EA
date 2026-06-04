@@ -11,17 +11,16 @@ const { post, isRelated = false } = Astro.props;
 ---
 
 
-<article class="rounded-xl h-full relative z-0 focus-within:z-10">
+<article class={`${!isRelated ? 'lg:rounded-xl' : ''} h-full relative z-0 focus-within:z-10`}>
   <a
     href={`${base}/posts/${post.slug}`}
     aria-label={post.title}
     class="group relative block w-full h-full aspect-square no-underline text-inherit
-          rounded-xl
           focus-visible:outline
           focus-visible:outline-offset-0
           focus-visible:outline-(--color-accent-blue)"
   >
-    <div class="absolute inset-0 rounded-xl overflow-hidden">
+    <div class={`${!isRelated ? 'lg:rounded-xl' : ''} absolute inset-0 overflow-hidden`}>
       <img
         class="absolute inset-0 w-full h-full object-cover block"
         src={post.coverImage.src}
