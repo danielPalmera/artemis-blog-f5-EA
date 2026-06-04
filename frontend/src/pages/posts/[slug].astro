@@ -35,13 +35,12 @@ const relatedPosts = allPosts
 	<meta slot="head" property="article:published_time" content={post.publishedAt} />
 	<meta slot="head" property="article:author" content={post.author} />
 	<meta slot="head" property="article:tag" content={post.tags} />
-	
 	<article>
 		<div class="w-full lg:max-w-190 lg:mx-auto flex flex-col px-6 lg:px-0 py-8 lg:py-16">
 			<HeaderPost post={post} />
-			<section class="content leading-[1.8] text-(--color-text)" set:html={"<spam class='font-bold'>"+post.excerpt+"</spam>" + post.content} aria-label="Contenido del artículo" />
+			<section class="content leading-relaxed text-(--color-text)" set:html={"<spam class='font-bold'>"+post.excerpt+"</spam>" + post.content} aria-label="Contenido del artículo" />
 		</div>
 	</article>
-		<RelatedArticles posts={relatedPosts} />
+	<RelatedArticles posts={relatedPosts} />
 	
 </BaseLayout>

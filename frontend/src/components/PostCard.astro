@@ -37,11 +37,11 @@ const { post, isRelated = false } = Astro.props;
             })}
           </time>
 
-          <h2 class="text-base font-bold leading-[1.35] m-0">{post.title}</h2>
+          <h2 class="text-base font-bold leading-snug m-0">{post.title}</h2>
 
           {!isRelated && (
             <>
-              <p class="text-[0.85rem] opacity-[0.85] line-clamp-1 m-0">{post.excerpt}</p>
+              <p class="text-[0.85rem] opacity-85 line-clamp-1 m-0">{post.excerpt}</p>
               <span class="text-(length:--fs-caption) text-(--color-accent-gold) font-medium mt-1 tracking-wide">Read story →</span>
             </>
           )}
