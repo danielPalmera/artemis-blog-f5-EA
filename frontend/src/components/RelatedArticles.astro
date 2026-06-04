@@ -19,15 +19,13 @@ const { posts } = Astro.props;
 				gap-2"
 			>
 		<p class="
-		font-medium
-		leading-[120%]
-		tracking-[1.6px]
-		uppercase
-		text-(length:--label)
-		text-(--color-accent-gold)"
+		font-medium leading-[120%] tracking-[1.6px] uppercase text-(length:--label) text-(--color-accent-gold)"
 		>CONTINUE READING</p>
-
-		<h3 class="leading-[130%] tracking-[-0.3px] font-bold text-(length:--heading-h3) text-(--color-text)" >Related stories</h3>
+		<h3
+  		class="heading-h3 font-normal lg:font-bold leading-[140%] lg:leading-[130%] lg:tracking-[-0.3px] text-(--color-text)"
+>
+  Related stories
+</h3>
 
 	</header>
 	<RelatedArticlesList posts={posts} />
