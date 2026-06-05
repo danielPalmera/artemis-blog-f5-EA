@@ -68,7 +68,7 @@ describe('getFirstTag', () => {
     expect(getFirstTag('space, science, nasa')).toBe('space');
   });
 
-  it('normaliza a minúsculas', () => {
+  it('Cambia a minúsculas', () => {
     expect(getFirstTag('SPACE, Science')).toBe('space');
   });
 
