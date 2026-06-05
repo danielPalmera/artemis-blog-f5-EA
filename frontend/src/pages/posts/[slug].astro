@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import HeaderPost from '../../components/HeaderPost.astro';
+import base from "../../utils/base";
+import { absoluteImg } from '../../utils/images';
 
 import type { Post } from '../../types/post';
 
@@ -28,7 +30,7 @@ const relatedPosts = allPosts
 	title={`${post.title} · The Artemis Diary`}
 	description={post.excerpt}
 	ogType="article"
-	ogImage={post.coverImage.src}
+	ogImage={absoluteImg(post.coverImage.src, Astro.site, base)}
 	ogImageAlt={post.coverImage.alt}
 >
 	<meta slot="head" name="author" content={post.author} />

@@ -41,3 +41,28 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+**Deployment**
+
+- **Public base:** The project reads the site base path from the `PUBLIC_BASE` environment variable at build time. Set it in `frontend/.env.production` or provide it from your CI as `PUBLIC_BASE=/your-subpath/`.
+- **Build commands:** Run the build from the `frontend` folder so Astro picks up `frontend/.env.production`:
+
+```bash
+pnpm --dir frontend install
+pnpm --dir frontend build
+pnpm --dir frontend preview
+```
+
+- **CI notes:** If your CI runs the build from the repo root, ensure it sets `PUBLIC_BASE` as an environment variable for the `frontend` build step (example for most CI systems):
+
+```bash
+cd frontend
+PUBLIC_BASE=/artemis pnpm build
+```
+
+- **Normalization:** The config normalizes `PUBLIC_BASE` to ensure a trailing slash, so `/artemis` and `/artemis/` behave the same.
+
+**comando para desplegar ***
+
+cd frontend; 
+$env:PUBLIC_BASE="/artemis/"; $env:PUBLIC_SITE_URL="https://danielmolina956.42web.io"; pnpm astro build

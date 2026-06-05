@@ -1,7 +1,7 @@
 ---
 import type { Post } from "../types/post";
-import base from "../lib/base";
-
+import base from "../utils/base";
+import { localImg } from '../utils/images';
 interface Props {
   post: Post;
   isRelated?: boolean;
@@ -23,7 +23,7 @@ const { post, isRelated = false } = Astro.props;
     <div class={`${!isRelated ? 'lg:rounded-xl' : ''} absolute inset-0 overflow-hidden`}>
       <img
         class="absolute inset-0 w-full h-full object-cover block"
-        src={post.coverImage.src}
+        src={localImg(post.coverImage.src, base)}
         alt={post.coverImage.alt}
       />
 

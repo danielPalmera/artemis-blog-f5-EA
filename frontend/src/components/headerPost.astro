@@ -1,6 +1,7 @@
 ---
 import type { Post } from "../types/post";
-import base from "../lib/base";
+import base from "../utils/base";
+import { localImg } from '../utils/images';
 interface Props {
     post: Post;
 } 
@@ -10,7 +11,7 @@ const { post } = Astro.props;
 <header class="flex flex-col gap-6 pb-8 lg:pt-12 lg:pb-0 lg:px-0 lg:gap-8 ">
 	<a class="font-medium leading-tight tracking-widest uppercase text-(length:--label) text-(--color-text-secondary) hover:text-(--color-text-primary)" href={`${base}/`}>← Back to stories</a>
 	<figure class="w-full max-h-80 overflow-hidden">
-		<img class="w-full h-120 object-cover" src={post.coverImage.src} alt={post.coverImage.alt} />
+		<img class="w-full h-120 object-cover" src={localImg(post.coverImage.src, base)} alt={post.coverImage.alt} />
 	</figure>
 	<h1 class="font-bold text-(length:--heading-h2) text-(--color-text) leading-tight">{post.title}</h1>
 	<footer class="flex flex-col lg:flex-row lg:items-center leading-snug gap-x-2 font-medium text-(length:--label) text-(--color-text-secondary)">
