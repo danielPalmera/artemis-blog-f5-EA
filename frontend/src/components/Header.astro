@@ -1,5 +1,6 @@
 ---
-import base from "../lib/base";
+import base from "../utils/base";
+import { localImg } from '../utils/images';
 ---
 
 <header
@@ -15,7 +16,7 @@ import base from "../lib/base";
       focus-visible:outline-(--color-accent-blue)"
     >
       <img
-        src={`${base}/images/artemis-logo.png`}
+        src={localImg(`/images/artemis-logo.png`, base)}
         class="h-12 w-auto"
         alt="The Artemis Diary"
       />
