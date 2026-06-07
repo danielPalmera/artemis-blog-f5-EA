@@ -1,11 +1,8 @@
 ---
 import type { Post } from "../types/post";
 import PostCard from "./PostCard.astro";
-
-
-const res = await fetch("http://localhost:3000/api/v1/posts");
-
-const posts: Post[] = await res.json();
+import { getPosts } from "../utils/postUtilss";
+const posts = await getPosts();
 ---
 
 <ul class="list-none p-0 m-0 grid grid-cols-1 gap-0 md:grid-cols-3 md:auto-cols-[480px]">

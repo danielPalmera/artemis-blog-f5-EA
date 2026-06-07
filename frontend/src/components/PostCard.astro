@@ -29,7 +29,7 @@ const { post, isRelated = false } = Astro.props;
         alt={post.coverImage.alt}
       />
 
-      <div class="absolute inset-0 flex items-end bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.55)_50%,rgba(0,0,0,0.85)_100%)] opacity-100 transition-opacity duration-300">
+      <div class="absolute inset-0 flex items-end hover:bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.55)_50%,rgba(0,0,0,0.85)_100%)] opacity-100 transition-opacity duration-300">
         <div class={`p-8 flex flex-col gap-4 text-white w-full transition-[opacity,transform] duration-350 ease-in-out ${isRelated ? '' : 'lg:opacity-0 lg:translate-y-3 lg:group-hover:opacity-100 lg:group-hover:translate-y-0'}`}>
           <DatePublished publishedAt={post.publishedAt} />
           <h2 class={`${!isRelated ? 'font-bold' : ''}  label leading-snug m-0`}>{post.title}</h2>

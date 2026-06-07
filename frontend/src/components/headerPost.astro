@@ -10,7 +10,7 @@ const { post } = Astro.props;
 ---
 
 <header class="flex flex-col gap-6 pb-8 lg:pt-12 lg:pb-0 lg:px-0 lg:gap-8 ">
-	<a class="label tracking-widest uppercase text-(--color-text-secondary) hover:text-(--color-text-primary)" href={`${base}/`}>← Back to stories</a>
+	<a class="label tracking-widest uppercase text-(--color-text-secondary) hover:text-(--color-accent-gold)" href={`${base}/`}>← Back to stories</a>
 		<figure class="w-full max-h-80 overflow-hidden">
 			<img class="w-full h-120 object-cover" src={localImg(post.coverImage.src, base)} alt={post.coverImage.alt} />
 		</figure>

@@ -1,11 +1,11 @@
 ---
+import { absoluteImg } from '../../utils/images';
+import type { Post } from '../../types/post';
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import HeaderPost from '../../components/HeaderPost.astro';
 import base from "../../utils/base";
-import { absoluteImg } from '../../utils/images';
-
-import type { Post } from '../../types/post';
 
 export async function getStaticPaths() {
 	const res = await fetch("http://localhost:3000/api/v1/posts");
@@ -25,7 +25,6 @@ const relatedPosts = allPosts
 
 
 ---
-
 <BaseLayout
 	title={`${post.title} · The Artemis Diary`}
 	description={post.excerpt}
@@ -44,5 +43,4 @@ const relatedPosts = allPosts
 		</div>
 	</article>
 	<RelatedArticles posts={relatedPosts} />
-	
 </BaseLayout>
