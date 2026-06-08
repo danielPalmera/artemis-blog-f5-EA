@@ -12,11 +12,11 @@ export async function getStaticPaths() {
 	const posts: Post[] = await res.json();
 	return posts.map((post: Post) => ({
 		params: { slug: post.slug },
-		props: { post, allPosts: posts },
+		props: { post },
 	}));
 }
 
-const { post, allPosts }: { post: Post; allPosts: Post[] } = Astro.props;
+const { post }: { post: Post } = Astro.props;
 ---
 <BaseLayout
 	title={`${post.title} · The Artemis Diary`}
