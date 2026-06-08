@@ -1,0 +1,13 @@
+---
+interface Props {
+  type: "footer" | "related";
+}
+
+const { type = "footer" } = Astro.props;
+
+const queClasesAplicar = type === "footer" ? "font-bold" : "font-normal lg:font-bold leading-snug lg:tracking-tight";
+---
+
+<h3 class={`heading-h3 text-(--color-text) ${queClasesAplicar}`}>
+  <slot />
+</h3>
