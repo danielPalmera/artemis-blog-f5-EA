@@ -1,4 +1,5 @@
 ---
+import { formatDate } from "../../utils/dateFormat";
 interface Props {
     publishedAt: string;
 }
@@ -6,9 +7,5 @@ interface Props {
 const { publishedAt } = Astro.props;
 ---
 <time class="caption uppercase tracking-wide" datetime={publishedAt}>
-    {new Date(publishedAt + "T12:00:00").toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-    })}
+    {formatDate(publishedAt)}
 </time>
