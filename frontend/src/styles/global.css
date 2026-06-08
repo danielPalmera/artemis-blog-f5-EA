@@ -27,11 +27,10 @@
 --caption: 0.8125rem;    /* 13px */
 --label: 0.75rem;        /* 12px */     
 
+--font-display: "Inter", sans-serif;
+--grid-col-width: 480px;
 }
 
-@theme {
-  --font-display: "Inter", sans-serif;
-}
 
 @utility display-xl {
   font-size: clamp(var(--heading-h2), 0.9rem + 8vw, var(--display-xl));

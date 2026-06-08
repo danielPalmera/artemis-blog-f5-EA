@@ -32,10 +32,10 @@ const relatedPosts = allPosts
 	ogImage={absoluteImg(post.coverImage.src, Astro.site, base)}
 	ogImageAlt={post.coverImage.alt}
 >
-	<meta slot="head" name="author" content={post.author} />
-	<meta slot="head" property="article:published_time" content={post.publishedAt} />
-	<meta slot="head" property="article:author" content={post.author} />
-	<meta slot="head" property="article:tag" content={post.tags} />
+		<meta slot="head" name="author" content={post.author} />
+		<meta slot="head" property="article:published_time" content={post.publishedAt} />
+		<meta slot="head" property="article:author" content={post.author} />
+		<meta slot="head" property="article:tag" content={post.tags} />
 	<article>
 		<div class="w-full lg:max-w-190 lg:mx-auto flex flex-col px-6 lg:px-0 py-8 lg:py-16">
 			<HeaderPost post={post} />
