@@ -1,15 +1,18 @@
 ---
 import type { Post } from '../../types/post';
 import PostCard from '../molecules/PostCard.astro';
-
+import { getRelatedPostByFirstTag } from "../../utils/postUtilss";
+const relatedPosts = await getRelatedPostByFirstTag(Astro.props.tags);
 interface Props {
-	posts: Post[];
+	tags: string;
 }
-const { posts } = Astro.props;
+
+const { tags } = Astro.props;
+
 ---
 <nav>
     <ul class="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-0 px-6 list-none">
-		{posts.map(relatedPost => (
+		{relatedPosts && relatedPosts.map(relatedPost => (
 			<li>
 				<PostCard post={relatedPost} isRelated={true} />
 			</li>

@@ -14,3 +14,9 @@ export async function getPosts(): Promise<Post[]> {
     return []; 
   }
 }
+
+export async function getRelatedPostByFirstTag(tags: string): Promise<Post[] | null> {
+    const firstTag = String(tags).split(',')[0].trim().toLowerCase();
+    const relatedPosts = (await getPosts()).filter(articulo => articulo.tags !== tags && String(articulo.tags).split(',').map(trozo => trozo.trim().toLowerCase()).includes(firstTag)).slice(0, 3);
+    return relatedPosts;
+}

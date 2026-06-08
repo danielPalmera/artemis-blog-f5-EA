@@ -17,13 +17,6 @@ export async function getStaticPaths() {
 }
 
 const { post, allPosts }: { post: Post; allPosts: Post[] } = Astro.props;
-
-const firstTag = String(post.tags).split(',')[0].trim().toLowerCase();
-const relatedPosts = allPosts
-	.filter(p => p.slug !== post.slug && String(p.tags).split(',').map(t => t.trim().toLowerCase()).includes(firstTag))
-	.slice(0, 3);
-
-
 ---
 <BaseLayout
 	title={`${post.title} · The Artemis Diary`}
@@ -42,5 +35,5 @@ const relatedPosts = allPosts
 			<section class="content leading-relaxed text-(--color-text)" set:html={"<spam class='font-bold'>"+post.excerpt+"</spam>" + post.content} />
 		</div>
 	</article>
-	<RelatedArticles posts={relatedPosts} />
+	<RelatedArticles tags={post.tags} />
 </BaseLayout>
