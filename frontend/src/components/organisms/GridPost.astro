@@ -9,7 +9,7 @@ const posts = await getPosts();
   class="list-none p-0 m-0 grid grid-cols-1 gap-0 md:grid-cols-3 md:auto-cols-(--grid-col-width)"
 >
   {
-    posts.map((post: Post, index: number) => (
+    posts.map((post: Post) => (
       <li class="min-h-0 first:md:col-span-2 first:md:row-span-2">
         <PostCard post={post} isRelated={false} />
       </li>
