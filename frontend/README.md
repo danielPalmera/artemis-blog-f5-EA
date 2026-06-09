@@ -29,9 +29,9 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `pnpm install`         | Installs dependencies                            |
 | `pnpm dev`             | Starts local dev server at `localhost:4321`      |
 | `pnpm build`           | Build your production site to `./dist/`          |
 | `pnpm preview`         | Preview your build locally, before deploying     |
@@ -62,7 +62,10 @@ PUBLIC_BASE=/artemis pnpm build
 
 - **Normalization:** The config normalizes `PUBLIC_BASE` to ensure a trailing slash, so `/artemis` and `/artemis/` behave the same.
 
-**comando para desplegar ***
+**comando para desplegar \***
 
-cd frontend; 
+cd frontend;
 $env:PUBLIC_BASE="/artemis/"; $env:PUBLIC_SITE_URL="https://danielmolina956.42web.io"; pnpm astro build
+
+ejecutar lint
+pnpm run lint
