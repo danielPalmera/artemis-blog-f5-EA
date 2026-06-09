@@ -1,6 +1,6 @@
 // src/lib/formatDate.test.js
 import { describe, it, expect } from 'vitest';
-import { formatDate } from './formatDate';
+import { formatDate } from './_formatDate';
  
 describe('formatDate', () => {
  
