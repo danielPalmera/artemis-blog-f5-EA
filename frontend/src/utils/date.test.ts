@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { formatDate } from "./dateFormat";
+import { formatDate } from "./date";
 
 describe("formatDate", () => {
     describe("Camino feliz", () => {
@@ -60,5 +60,7 @@ describe("formatDate", () => {
         it("29 de febrero en año no bisiesto se ajusta al 1 de marzo", () => {
             expect(formatDate("2023-02-29")).toBe("Mar 1, 2023");
         });
+
+        
     });
 });

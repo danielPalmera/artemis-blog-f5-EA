@@ -3,6 +3,7 @@ import { getRelatedPostByFirstTag } from "./posts";
 import { mockPostsData } from "../mocks/mockPostsData";
 
 describe("getRelatedPostByFirstTag", () => {
+
     it("devuelve los 3 posts relacionados ignorando mayúsculas y espacios", () => {
         const resultado = getRelatedPostByFirstTag(
             mockPostsData[0].tags,
@@ -10,10 +11,8 @@ describe("getRelatedPostByFirstTag", () => {
         );
 
         expect(resultado).toHaveLength(3);
-
         const ids = resultado.map((p) => p.id);
         expect(ids).toEqual(["5", "4", "3"]);
-        expect(ids).not.toContain("1");
     });
 
     it("devuelve array vacío cuando no hay tags", () => {

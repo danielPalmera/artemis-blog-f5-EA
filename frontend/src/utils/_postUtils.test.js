@@ -1,6 +1,6 @@
 // src/lib/postUtils.test.js
 import { describe, it, expect } from 'vitest';
-import { getFirstTag, getRelatedPosts } from './postUtils';
+import { getFirstTag, getRelatedPosts } from './_postUtils';
 
 // ─── Datos de prueba ──────────────────────────────────────────────────────────
 

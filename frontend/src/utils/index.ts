@@ -1,4 +1,4 @@
 export * from './base';
-export * from './_formatDate';
+export * from './date';
 export * from './images';
 export * from './posts';

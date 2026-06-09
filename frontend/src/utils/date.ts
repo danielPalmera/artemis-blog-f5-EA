@@ -1,3 +1,4 @@
+
 export function formatDate(publishedAt: string): string {
     //valida que no sea una fecha inválida
     const date = new Date(publishedAt + "T12:00:00");
