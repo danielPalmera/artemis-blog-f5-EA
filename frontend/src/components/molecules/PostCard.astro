@@ -1,8 +1,9 @@
 ---
 import type { Post } from "../../types/post";
-import { base, localImg } from "../../utils/index";
-import DatePublished from '../../components/atoms/DatePublished.astro';
-import Images from '../atoms/img.astro'
+import { localImg } from "../../utils/images";
+import base from "../../utils/base";
+import DatePublished from "../../components/atoms/DatePublished.astro";
+import Images from "../atoms/img.astro";
 interface Props {
   post: Post;
   isRelated?: boolean;
@@ -11,8 +12,9 @@ interface Props {
 const { post, isRelated = false } = Astro.props;
 ---
 
-
-<article class={`${!isRelated ? 'lg:rounded-xl' : ''} h-full relative z-0 focus-within:z-10`}>
+<article
+  class={`${!isRelated ? "lg:rounded-xl" : ""} h-full relative z-0 focus-within:z-10`}
+>
   <a
     href={`${base}/posts/${post.slug}`}
     class="group relative block w-full h-full aspect-square no-underline text-inherit
@@ -20,27 +22,41 @@ const { post, isRelated = false } = Astro.props;
           focus-visible:outline-offset-0
           focus-visible:outline-(--color-accent-blue)"
   >
-    <div class={`${!isRelated ? 'lg:rounded-xl' : ''} absolute inset-0 overflow-hidden`}>
-      <Images  
+    <div
+      class={`${!isRelated ? "lg:rounded-xl" : ""} absolute inset-0 overflow-hidden`}
+    >
+      <Images
         class="absolute inset-0 w-full h-full object-cover block"
         src={localImg(post.coverImage.src, base)}
-        alt={post.coverImage.alt} 
+        alt={post.coverImage.alt}
       />
-      
 
-      <div class="absolute inset-0 flex items-end hover:bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.55)_50%,rgba(0,0,0,0.85)_100%)] opacity-100 transition-opacity duration-300">
-        <div class={`p-8 flex flex-col gap-4 text-white w-full transition-[opacity,transform] duration-350 ease-in-out ${isRelated ? '' : 'lg:opacity-0 lg:translate-y-3 lg:group-hover:opacity-100 lg:group-hover:translate-y-0'}`}>
+      <div
+        class="absolute inset-0 flex items-end hover:bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.55)_50%,rgba(0,0,0,0.85)_100%)] opacity-100 transition-opacity duration-300"
+      >
+        <div
+          class={`p-8 flex flex-col gap-4 text-white w-full transition-[opacity,transform] duration-350 ease-in-out ${isRelated ? "" : "lg:opacity-0 lg:translate-y-3 lg:group-hover:opacity-100 lg:group-hover:translate-y-0"}`}
+        >
           <DatePublished publishedAt={post.publishedAt} />
-          <h2 class={`${!isRelated ? 'font-bold' : ''}  label leading-snug m-0`}>{post.title}</h2>
-          {!isRelated && (
-            <>
-              <p class="text-[0.85rem] opacity-85 line-clamp-1 m-0">{post.excerpt}</p>
-              <span class="caption text-(--color-accent-gold) font-medium mt-1 tracking-wide">Read story →</span>
-            </>
-          )}
-
+          <h2
+            class={`${!isRelated ? "font-bold" : ""}  label leading-snug m-0`}
+          >
+            {post.title}
+          </h2>
+          {
+            !isRelated && (
+              <>
+                <p class="text-[0.85rem] opacity-85 line-clamp-1 m-0">
+                  {post.excerpt}
+                </p>
+                <span class="caption text-(--color-accent-gold) font-medium mt-1 tracking-wide">
+                  Read story →
+                </span>
+              </>
+            )
+          }
         </div>
       </div>
     </div>
-  </a> 
+  </a>
 </article>

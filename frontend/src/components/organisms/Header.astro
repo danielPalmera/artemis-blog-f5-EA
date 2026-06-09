@@ -1,25 +1,26 @@
 ---
-import { base, localImg } from "../../utils/index";
+import { base } from "../../utils/base";
+import { localImg } from "../../utils/images";
+import { Image } from "astro:assets";
 ---
 
 <header
   class="py-4 px-5 flex items-center bg-(--color-header-bg) border-b border-(--color-header-line)"
 >
   <div class="w-full lg:container lg:mx-auto lg:px-16">
-  <a
+    <a
       href={`${base}/`}
-      aria-label="The Artemis Diary"
       class="inline-block rounded-sm
       focus-visible:outline-2
       focus-visible:outline-offset-4
       focus-visible:outline-(--color-accent-blue)"
     >
-      <img
-        src={localImg(`/images/artemis-logo.png`, base)}
+      <Image
         class="h-12 w-auto"
+        src={localImg(`/images/artemis-logo.png`, base)}
         alt="The Artemis Diary"
-        height={96}
         width={92}
+        height={96}
       />
     </a>
   </div>

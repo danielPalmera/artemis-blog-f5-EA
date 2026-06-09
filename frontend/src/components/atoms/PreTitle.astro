@@ -1,11 +1,11 @@
 ---
 interface Props {
-    type: "hero" | "related";
+  type: "hero" | "related";
 }
 const { type = "hero" } = Astro.props;
-const queClasesAplicar = type === "hero" ? "label uppercase text-(--color-accent-gold)" :"label tracking-widest uppercase text-(--color-accent-gold)";
+const queClasesAplicar = type === "hero" ? "" : "tracking-widest ";
 ---
 
-<p class={`${queClasesAplicar}`}>
-    <slot />
+<p class={`label uppercase text-(--color-accent-gold) ${queClasesAplicar}`}>
+  <slot />
 </p>

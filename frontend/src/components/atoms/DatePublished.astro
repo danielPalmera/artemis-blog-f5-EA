@@ -1,11 +1,12 @@
 ---
-import { formatDate } from "../../utils/date"; //evitar
+import { formatDate } from "../../utils/date";
 interface Props {
-    publishedAt: string;
+  publishedAt: string;
 }
 
 const { publishedAt } = Astro.props;
 ---
+
 <time class="caption uppercase tracking-wide" datetime={publishedAt}>
-    {formatDate(publishedAt)}
+  {formatDate(publishedAt)}
 </time>
