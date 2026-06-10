@@ -1,13 +1,7 @@
 export function localImg(src: string, base: string): string {
   if (!src) return "";
-
-  // Normalize base to not have trailing slash for consistency here
   const cleanBase = base.replace(/\/$/, "");
-
-  // Case 1: Replace dev server URL with local path
   const path = src.replace(/^https?:\/\/[^/]+(\/images\/)/, "$1");
-
-  // Case 2: Ensure path starts with base if it's an absolute path within the site
   if (path.startsWith("/images/")) {
     return `${cleanBase}${path}`;
   }
