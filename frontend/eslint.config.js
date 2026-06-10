@@ -44,5 +44,5 @@ export default [
     },
   },
 
-  git prettier, // ← añade esto AL FINAL siempre
+  prettier, // ← añade esto AL FINAL siempre
 ];
