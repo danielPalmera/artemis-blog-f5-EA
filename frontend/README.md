@@ -57,7 +57,7 @@ pnpm --dir frontend preview
 
 ```bash
 cd frontend
-PUBLIC_BASE=/artemis pnpm build
+    PUBLIC_BASE=/artemis pnpm build
 ```
 
 - **Normalization:** The config normalizes `PUBLIC_BASE` to ensure a trailing slash, so `/artemis` and `/artemis/` behave the same.
