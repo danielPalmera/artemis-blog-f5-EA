@@ -26,6 +26,7 @@ const { post, isRelated = false } = Astro.props;
       class={`${!isRelated ? "lg:rounded-xl" : ""} absolute inset-0 overflow-hidden`}
     >
       <Images
+        transition:name={`picture-${post.id}`}
         class="absolute inset-0 w-full h-full object-cover block"
         src={localImg(post.coverImage.src, base)}
         alt={post.coverImage.alt}
