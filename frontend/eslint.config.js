@@ -44,4 +44,6 @@ export default [
       ],
     },
   },
+
+  prettier, // ← añade esto AL FINAL siempre
 ];
