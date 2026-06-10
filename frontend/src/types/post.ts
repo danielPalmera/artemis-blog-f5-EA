@@ -17,9 +17,9 @@ export interface Post {
 }
 
 export interface ImgProps {
-    src: string;
-    alt: string;
-    class: string;
-    width?: number;
-    height?: number;
+  src: string;
+  alt: string;
+  class: string;
+  width?: number;
+  height?: number;
 }

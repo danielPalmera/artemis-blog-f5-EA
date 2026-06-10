@@ -10,11 +10,18 @@ export async function getPosts(): Promise<Post[]> {
 
 export function getRelatedPostByFirstTag(
   tags: string,
-  allPosts: Post[]
+  allPosts: Post[],
 ): Post[] {
   const firstTag = String(tags).split(",")[0].trim().toLowerCase();
-  return allPosts .filter((articulo ) => articulo.tags !== tags && String(articulo.tags).split(",").map((tramo) => tramo.trim().toLowerCase()).includes(firstTag)
+  return allPosts
+    .filter(
+      (articulo) =>
+        articulo.tags !== tags &&
+        String(articulo.tags)
+          .split(",")
+          .map((tramo) => tramo.trim().toLowerCase())
+          .includes(firstTag),
     )
     .slice(0, 3);
-    //se puede convertir en constante
+  //se puede convertir en constante
 }

@@ -4,34 +4,33 @@
 
   /* COLORS */
 
-  --bg-tets:#FFF;
+  --bg-tets: #fff;
   --color-background: #000000;
   --color-surface: #0a0a0c;
   --color-surface-elevated: #14141a;
   --color-text: #f5f5f7;
   --color-text-secondary: #8b8b96;
-  --color-text-muted: #D1D1D6;
+  --color-text-muted: #d1d1d6;
   --color-accent-blue: #2a6ff2;
   --color-accent-gold: #d4b262;
   --color-header-bg: #0a0a0f;
   --color-header-line: #1e1e2e;
 
   /* TYPOGRAPHY */
---display-xl: 6rem;      /* 96px */
---heading-h1: 4rem;      /* 64px */
---heading-h2: 2.5rem;    /* 40px */
---heading-h3: 1.5rem;    /* 24px */
---body-large: 1.25rem;   /* 20px */
---body-regular: 1rem;    /* 16px */
---body-small: 0.85rem;    /* 12.8px */
---caption: 0.8125rem;    /* 13px */
---label: 0.75rem;        /* 12px */     
---grid-col-width: 480px;
+  --display-xl: 6rem; /* 96px */
+  --heading-h1: 4rem; /* 64px */
+  --heading-h2: 2.5rem; /* 40px */
+  --heading-h3: 1.5rem; /* 24px */
+  --body-large: 1.25rem; /* 20px */
+  --body-regular: 1rem; /* 16px */
+  --body-small: 0.85rem; /* 12.8px */
+  --caption: 0.8125rem; /* 13px */
+  --label: 0.75rem; /* 12px */
+  --grid-col-width: 480px;
 }
 
 @theme {
   --font-display: "Inter", sans-serif;
-  
 }
 
 @utility display-xl {
@@ -51,9 +50,8 @@
   font-size: clamp(var(--caption), 0.6rem + 1vw, var(--heading-h3));
 }
 
-
-@utility caption{
-  font-size:clamp(var(--label),0.9rem+1w,var(--caption))
+@utility caption {
+  font-size: clamp(var(--label), 0.9rem+1w, var(--caption));
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
@@ -69,10 +67,23 @@
   line-height: 1.5;
 }
 
-.content { font-size: 1rem; }
-.content h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; color: #ccc; }
-.content h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: #ccc; }
-.content p { margin-bottom: 1rem; color: #ccc; }
+.content {
+  font-size: 1rem;
+}
+.content h2 {
+  font-size: 1.4rem;
+  margin: 2rem 0 0.75rem;
+  color: #ccc;
+}
+.content h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+  color: #ccc;
+}
+.content p {
+  margin-bottom: 1rem;
+  color: #ccc;
+}
 
 /*
   Tabla de referencia espaciados:
