@@ -22,7 +22,7 @@ describe("formatDate", () => {
     it("devuelve un string", () => {
       expect(typeof formatDate("2024-01-01")).toBe("string");
     });
-
+    //esto es una prueba de comentario
     it("no devuelve string vacío para fecha válida", () => {
       expect(formatDate("2024-01-01")).not.toBe("");
     });

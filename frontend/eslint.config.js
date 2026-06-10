@@ -1,12 +1,36 @@
 import js from "@eslint/js";
-import tseslint from "typescript-eslint";
+import tsParser from "@typescript-eslint/parser";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
 import astro from "eslint-plugin-astro";
 import checkFile from "eslint-plugin-check-file";
 import prettier from "eslint-config-prettier";
 
 export default [
   js.configs.recommended,
-  ...tseslint.configs.recommended,
+
+  {
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        project: "./tsconfig.json",
+      },
+      globals: {
+        fetch: "readonly",
+      },
+    },
+    plugins: { "@typescript-eslint": tsPlugin },
+    rules: {
+      ...tsPlugin.configs.recommended.rules,
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
+    },
+  },
+
   ...astro.configs.recommended,
   prettier,
 
@@ -17,17 +41,6 @@ export default [
       globals: {
         process: "readonly",
       },
-    },
-  },
-
-  {
-    rules: {
-      "no-console": "warn",
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
-      ],
     },
   },
 
@@ -44,6 +57,4 @@ export default [
       ],
     },
   },
-
-  prettier, // ← añade esto AL FINAL siempre
 ];
