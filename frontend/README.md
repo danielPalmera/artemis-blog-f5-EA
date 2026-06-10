@@ -69,3 +69,4 @@ $env:PUBLIC_BASE="/artemis/"; $env:PUBLIC_SITE_URL="https://danielmolina956.42we
 
 ejecutar lint
 pnpm run lint
+# test
