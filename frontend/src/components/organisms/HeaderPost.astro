@@ -3,6 +3,7 @@ import type { Post } from "../../types/post";
 import { base } from "../../utils/base";
 import { localImg } from "../../utils/images";
 import DatePublished from "../atoms/DatePublished.astro";
+import H1 from "../atoms/H1.astro";
 interface Props {
   post: Post;
 }
@@ -21,7 +22,7 @@ const { post } = Astro.props;
       alt={post.coverImage.alt}
     />
   </figure>
-  <h1 class="heading-h2 text-(--color-text)">{post.title}</h1>
+  <H1>{post.title}</H1>
   <footer
     class="label flex flex-col lg:flex-row lg:items-center gap-x-2 text-(--color-text-secondary)"
   >
