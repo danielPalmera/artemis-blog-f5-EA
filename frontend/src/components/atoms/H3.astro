@@ -1,8 +1,8 @@
 ---
-import { headingVariants } from "../../utils/variants";
+import { headingVariants, type HeadingVariants } from "../../utils/variants";
 
 interface Props {
-  type: "footer" | "related";
+  type: HeadingVariants;
 }
 
 const { type = "footer" } = Astro.props as Props;
