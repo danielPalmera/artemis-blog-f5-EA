@@ -2,10 +2,10 @@
 import { absoluteImg } from "../../utils/images";
 import base from "../../utils/base";
 import type { Post } from "../../types/post";
-import BaseLayout from "../../layouts/BaseLayout.astro";
 
-import RelatedArticles from "../../components/organisms/RelatedArticles.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import HeaderPost from "../../components/organisms/HeaderPost.astro";
+import RelatedArticles from "../../components/organisms/RelatedArticles.astro";
 
 export async function getStaticPaths() {
   const res = await fetch(import.meta.env.PUBLIC_API_BASE + "/api/v1/posts");
