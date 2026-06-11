@@ -1,18 +1,14 @@
 ---
+import { preTitleVariants, type PreTitleVariants } from "../../utils/variants";
+
 interface Props {
-  type: "hero" | "related";
+  type: PreTitleVariants;
 }
 const { type = "hero" } = Astro.props;
 ---
 
 <p
-  class:list={[
-    "label uppercase text-(--color-accent-gold)",
-    {
-      "": type === "hero",
-      "tracking-widest": type === "related",
-    },
-  ]}
+  class={`label uppercase text-(--color-accent-gold),  ${preTitleVariants[type]}`}
 >
   <slot />
 </p>
