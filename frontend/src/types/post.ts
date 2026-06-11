@@ -1,7 +1,4 @@
-export interface CoverImage {
-  src: string;
-  alt: string;
-}
+import type { CoverImage } from ".cover-image";
 
 export interface Post {
   id: string;
@@ -14,12 +11,4 @@ export interface Post {
   tags: string;
   coverImage: CoverImage;
   readingTime: number;
-}
-
-export interface ImgProps {
-  src: string;
-  alt: string;
-  class: string;
-  width?: number;
-  height?: number;
 }

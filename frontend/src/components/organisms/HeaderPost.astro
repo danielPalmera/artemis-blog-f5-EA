@@ -17,6 +17,7 @@ const { post } = Astro.props;
   >
   <figure class="w-full max-h-80 overflow-hidden">
     <img
+      transition:name={`picture-${post.id}`}
       class="w-full h-120 object-cover"
       src={localImg(post.coverImage.src, base)}
       alt={post.coverImage.alt}
