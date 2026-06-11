@@ -1,8 +1,10 @@
 
 
-export type HeadingVariants = "footer"|"related";
+export type H3Variants = "footer"|"related";
 
-export const headingVariants: Record<HeadingVariants, string> = {
+export const h3Variants: Record<H3Variants, string> = {
   footer: "font-bold",
   related: "font-normal lg:font-bold leading-snug lg:tracking-tight",
 };
+
+
