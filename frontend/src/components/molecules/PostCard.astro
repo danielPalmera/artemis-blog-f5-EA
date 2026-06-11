@@ -46,12 +46,14 @@ const { post, isRelated = false } = Astro.props;
           </h2>
           {
             !isRelated && (
-              <p class="text-[0.85rem] opacity-85 line-clamp-1 m-0">
-                {post.excerpt}
-              </p>
-              <span class="caption text-(--color-accent-gold) font-medium mt-1 tracking-wide">
-                Read story →
-              </span>
+              <>
+                <p class="text-[0.85rem] opacity-85 line-clamp-1 m-0">
+                  {post.excerpt}
+                </p>
+                <span class="caption text-(--color-accent-gold) font-medium mt-1 tracking-wide">
+                  Read story →
+                </span>
+              </>
             )
           }
         </div>
