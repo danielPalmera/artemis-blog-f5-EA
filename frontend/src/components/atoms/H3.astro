@@ -2,7 +2,7 @@
 interface Props {
   type: "footer" | "related";
 }
-const { type = "footer" } = Astro.props;
+const { type = "footer" } = Astro.props as Props;
 const queClasesAplicar =
   type === "footer"
     ? "font-bold"
@@ -12,3 +12,17 @@ const queClasesAplicar =
 <h3 class={`heading-h2 text-(--color-text) ${queClasesAplicar}`}>
   <slot />
 </h3>
+
+<!--
+ Si `isRed` es verdadero, la clase será "box red".
+ Si `isRed` es falso, la clase será "box". 
+<div class:list={["box", { red: isRed }]}><slot /></div>
+<style>
+  .box {
+    border: 1px solid blue;
+  }
+  .red {
+    border-color: red;
+  }
+</style>
+-->

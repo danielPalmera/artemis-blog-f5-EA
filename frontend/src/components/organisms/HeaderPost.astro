@@ -27,8 +27,8 @@ const { post } = Astro.props;
   <footer
     class="label flex flex-col lg:flex-row lg:items-center gap-x-2 text-(--color-text-secondary)"
   >
-    <DatePublished publishedAt={post.publishedAt} />
+    <DatePublished aDate={post.publishedAt} />
     <span class="hidden lg:inline" aria-hidden="true">·</span>
-    <span class="uppercase">{post.readingTime} min rea</span>
+    <span class="uppercase">{post.readingTime} min read</span>
   </footer>
 </header>

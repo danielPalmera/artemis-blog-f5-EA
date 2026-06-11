@@ -39,7 +39,7 @@ const { post, isRelated = false } = Astro.props;
         <div
           class={`p-8 flex flex-col gap-4 text-white w-full transition-[opacity,transform] duration-350 ease-in-out ${isRelated ? "" : "lg:opacity-0 lg:translate-y-3 lg:group-hover:opacity-100 lg:group-hover:translate-y-0"}`}
         >
-          <DatePublished publishedAt={post.publishedAt} />
+          <DatePublished aDate={post.publishedAt} />
           <h2
             class={`${!isRelated ? "font-bold" : ""}  label leading-snug m-0`}
           >
