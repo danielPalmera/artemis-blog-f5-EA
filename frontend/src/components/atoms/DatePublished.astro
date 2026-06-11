@@ -2,12 +2,16 @@
 import { formatDate } from "../../utils/date";
 
 interface Props {
-  publishedAt: string;
+  aDate: string;
 }
 
-const { publishedAt } = Astro.props;
+const { aDate } = Astro.props as Props;
 ---
 
-<time class="caption uppercase tracking-wide" datetime={publishedAt}>
-  {formatDate(publishedAt)}
+<!-- POST Text/Secondary --><!-- -->
+<time
+  class="caption text-(--color-text-secondary) uppercase tracking-wide"
+  datetime={aDate}
+>
+  {formatDate(aDate)}
 </time>
