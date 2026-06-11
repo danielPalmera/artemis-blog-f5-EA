@@ -16,6 +16,7 @@ const { post, isRelated = false } = Astro.props;
   class={`${!isRelated ? "lg:rounded-xl" : ""} h-full relative z-0 focus-within:z-10`}
 >
   <a
+    data-astro-prefetch
     href={`${base}/posts/${post.slug}`}
     class="group relative block w-full h-full aspect-square no-underline text-inherit
           focus-visible:outline
