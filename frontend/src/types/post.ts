@@ -1,4 +1,4 @@
-import type { CoverImage } from ".cover-image";
+import type { CoverImage } from "./cover-image";
 
 export interface Post {
   id: string;
